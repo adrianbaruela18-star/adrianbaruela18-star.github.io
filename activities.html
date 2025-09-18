@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quadratic Equations — 25-Item Exam</title>
+  <!-- Tailwind CDN (inline class usage only) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <div class="max-w-4xl mx-auto p-6">
+    <header class="mb-6">
+      <h1 class="text-3xl font-bold tracking-tight">Quadratic Equations — 25-Item Exam</h1>
+      <p class="text-slate-600 mt-2">
+        Multiple choice. After you click <span class="font-semibold">Submit</span>, incorrect answers will reveal fully worked
+        solutions based on your notes (factoring, square roots, quadratic formula, inequalities, standard form, etc.).
+      </p>
+    </header>
+
+    <main id="quiz" class="space-y-6"></main>
+
+    <div class="mt-8 flex flex-col sm:flex-row gap-3">
+      <button id="submitBtn" class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition">
+        Submit
+      </button>
+      <button id="resetBtn" class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-slate-200 text-slate-800 font-semibold shadow hover:bg-slate-300 transition">
+        Reset
+      </button>
+      <div id="scoreBox" class="sm:ml-auto text-lg font-semibold"></div>
+    </div>
+  </div>
+
+  <script>
+    // 25 questions, each with choices and a worked solution drawn from the provided notes.
+    const questions = [
+      {
+        q: "Solve: 3x² + 9x = 0",
+        choices: ["x = 0 or x = −9", "x = 0 or x = −3", "x = 3 or x = −3", "x = 9 only"],
+        a: 1,
+        sol:
+`Factor a common monomial:
+3x² + 9x = 3x(x + 3) = 0.
+By the Zero Product Property, 3x = 0 or (x + 3) = 0
+⟹ x = 0 or x = −3.`
+      },
+      {
+        q: "Solve: x² − 49 = 0",
+        choices: ["x = 7", "x = −7", "x = ±7", "x = ±49"],
+        a: 2,
+        sol:
+`Difference of two squares:
+x² − 49 = (x + 7)(x − 7) = 0 ⟹ x = −7 or x = 7 (i.e., x = ±7).`
+      },
+      {
+        q: "Solve: x² − 2x + 1 = 0",
+        choices: ["x = 1 (double root)", "x = −1 (double root)", "x = ±1", "No real root"],
+        a: 0,
+        sol:
+`Perfect square trinomial:
+x² − 2x + 1 = (x − 1)(x − 1) = 0 ⟹ x = 1 (double root).`
+      },
+      {
+        q: "Solve: x² − 6x + 8 = 0",
+        choices: ["x = 2 or 4", "x = −2 or −4", "x = −2 or 4", "x = 1 or 8"],
+        a: 0,
+        sol:
+`Factor as a general trinomial:
+x² − 6x + 8 = (x − 2)(x − 4) = 0 ⟹ x = 2 or x = 4.`
+      },
+      {
+        q: "Solve: 3x² + 18x = 0",
+        choices: ["x = 0 or −6", "x = 0 or 6", "x = −3 only", "x = 3 only"],
+        a: 0,
+        sol:
+`Common monomial factor:
+3x² + 18x = 3x(x + 6) = 0 ⟹ 3x = 0 or x + 6 = 0 ⟹ x = 0 or x = −6.`
+      },
+      {
+        q: "Solve by extracting square roots: x² − 25 = 0",
+        choices: ["x = ±5", "x = 5 only", "x = −5 only", "x = ±25"],
+        a: 0,
+        sol:
+`x² = 25 ⟹ x = ±√25 = ±5 (Square Root Property).`
+      },
+      {
+        q: "Solve by extracting square roots: 3x² − 27 = 0",
+        choices: ["x = ±9", "x = ±3", "x = 3 only", "x = −3 only"],
+        a: 1,
+        sol:
+`3x² = 27 ⟹ x² = 9 ⟹ x = ±√9 = ±3.`
+      },
+      {
+        q: "Solve: (2x − 3)² = 18",
+        choices: [
+          "x = (3 ± 3√2) / 2",
+          "x = (−3 ± 3√2) / 2",
+          "x = 3 ± 3√2",
+          "x = ±3√2"
+        ],
+        a: 0,
+        sol:
+`Extract square roots:
+(2x − 3)² = 18 ⟹ 2x − 3 = ±√18 = ±3√2
+⟹ 2x = 3 ± 3√2 ⟹ x = (3 ± 3√2)/2.`
+      },
+      {
+        q: "Solve using the Quadratic Formula: 2x² + 10x + 8 = 0",
+        choices: ["x = −1 and x = −4", "x = 1 and x = 4", "x = −2 and x = −4", "x = −1 and x = −8"],
+        a: 0,
+        sol:
+`a = 2, b = 10, c = 8
+x = [−b ± √(b² − 4ac)]/(2a) = [−10 ± √(100 − 64)]/4
+= [−10 ± √36]/4 = (−10 ± 6)/4 ⟹ x = −1, −4.`
+      },
+      {
+        q: "Solve: x² + x − 4 = 0",
+        choices: [
+          "x = (−1 ± √17)/2",
+          "x = (1 ± √17)/2",
+          "x = (−1 ± √15)/2",
+          "x = (1 ± √15)/2"
+        ],
+        a: 0,
+        sol:
+`a = 1, b = 1, c = −4
+x = [−1 ± √(1 + 16)]/2 = [−1 ± √17]/2.`
+      },
+      {
+        q: "Write in standard form ax² + bx + c = 0: x² + x = 4",
+        choices: ["x² + x + 4 = 0", "x² + x − 4 = 0", "x² − x − 4 = 0", "x² − x + 4 = 0"],
+        a: 1,
+        sol:
+`Move 4 to the left:
+x² + x − 4 = 0 (a = 1, b = 1, c = −4).`
+      },
+      {
+        q: "Write in standard form: 7x² = (1/3)x",
+        choices: ["7x² + (1/3)x = 0", "7x² − (1/3)x = 0", "7x² − 3x = 0", "21x² − x = 0"],
+        a: 1,
+        sol:
+`Bring RHS to LHS:
+7x² − (1/3)x = 0 (a = 7, b = −1/3, c = 0).`
+      },
+      {
+        q: "Write in standard form: 6x² = 9",
+        choices: ["6x² + 9 = 0", "6x² − 9 = 0", "x² − 9 = 0", "6x² − 3 = 0"],
+        a: 1,
+        sol:
+`Move 9 to the left: 6x² − 9 = 0 (a = 6, b = 0, c = −9).`
+      },
+      {
+        q: "Rewrite so a > 0 and in standard form: −8x² + x = 6",
+        choices: ["−8x² + x − 6 = 0", "8x² − x − 6 = 0", "8x² − x + 6 = 0", "8x² + x − 6 = 0"],
+        a: 2,
+        sol:
+`First move 6 to the left: −8x² + x − 6 = 0.
+Make a positive by multiplying both sides by −1:
+8x² − x + 6 = 0.`
+      },
+      {
+        q: "Solve the inequality: x² − 9x + 8 ≤ 0",
+        choices: ["(−∞, 1) ∪ (8, ∞)", "[1, 8]", "(−∞, 1] ∪ [8, ∞)", "(1, 8)"],
+        a: 1,
+        sol:
+`Factor: x² − 9x + 8 = (x − 1)(x − 8).
+Parabola opens up, so ≤ 0 between the roots (including endpoints): [1, 8].`
+      },
+      {
+        q: "Solve the inequality: 3x² + 10x + 3 ≥ 0",
+        choices: [
+          "(−∞, −3] ∪ [−1/3, ∞)",
+          "[−3, −1/3]",
+          "(−∞, −3) ∪ (−1/3, ∞)",
+          "(−∞, ∞)"
+        ],
+        a: 0,
+        sol:
+`Factor: 3x² + 10x + 3 = (3x + 1)(x + 3).
+Upward parabola; ≥ 0 outside/at the roots:
+(−∞, −3] ∪ [−1/3, ∞).`
+      },
+      {
+        q: "Identify the factoring pattern for x² − 9.",
+        choices: [
+          "Perfect square trinomial",
+          "Difference of two squares",
+          "Sum of squares",
+          "Common monomial factor"
+        ],
+        a: 1,
+        sol:
+`x² − 9 = x² − 3² is a difference of two squares: (x − 3)(x + 3).`
+      },
+      {
+        q: "Direction of opening for y = −2x² + 5 is…",
+        choices: ["Opens upward (minimum)", "Opens downward (maximum)", "Neither", "Cannot be determined"],
+        a: 1,
+        sol:
+`Coefficient a = −2 < 0 ⟹ parabola opens downward (has a maximum).`
+      },
+      {
+        q: "For 3x² − 5x − 1 = 0, what are (a, b, c)?",
+        choices: ["(3, −5, −1)", "(−3, 5, 1)", "(1, −5, −3)", "(3, 5, −1)"],
+        a: 0,
+        sol:
+`Already in standard form ax² + bx + c = 0, so a = 3, b = −5, c = −1.`
+      },
+      {
+        q: "The graph of a quadratic function is a…",
+        choices: ["Line", "Circle", "Parabola", "Hyperbola"],
+        a: 2,
+        sol:
+`A quadratic function y = ax² + bx + c has a parabola as its graph.`
+      },
+      {
+        q: "Zero Product Property states that if ab = 0, then…",
+        choices: ["a = 0 and b = 0", "a = 0 or b = 0", "a = b", "a = 1 or b = 1"],
+        a: 1,
+        sol:
+`If a·b = 0, then at least one factor is zero: a = 0 or b = 0.`
+      },
+      {
+        q: "Which is the correct Quadratic Formula?",
+        choices: [
+          "x = [b ± √(b² − 4ac)] / (2a)",
+          "x = [−b ± √(b² − 4ac)] / (2a)",
+          "x = [−b ± √(4ac − b²)] / a",
+          "x = [−b ± (b² − 4ac)] / 2"
+        ],
+        a: 1,
+        sol:
+`Quadratic Formula: x = (−b ± √(b² − 4ac)) / (2a).`
+      },
+      {
+        q: "Solve: x² + 10x + 25 = 0",
+        choices: ["x = −5 (double root)", "x = 5 (double root)", "x = ±5", "No real root"],
+        a: 0,
+        sol:
+`Perfect square: x² + 10x + 25 = (x + 5)² = 0 ⟹ x = −5 (double root).`
+      },
+      {
+        q: "Solve: x² − 8 = 0",
+        choices: ["x = ±8", "x = ±4", "x = ±2√2", "x = 2 only"],
+        a: 2,
+        sol:
+`Extract square roots: x² = 8 ⟹ x = ±√8 = ±2√2.`
+      },
+      {
+        q: "Solve: x² − 3x + 2 = 0",
+        choices: ["x = −1, −2", "x = 1, 2", "x = −1, 2", "x = 1, −2"],
+        a: 1,
+        sol:
+`Factor: x² − 3x + 2 = (x − 1)(x − 2) = 0 ⟹ x = 1, 2.`
+      }
+    ];
+
+    // ---- UI RENDER ----
+    const quiz = document.getElementById("quiz");
+    questions.forEach((item, idx) => {
+      const card = document.createElement("section");
+      card.className = "bg-white rounded-2xl shadow p-5";
+      card.innerHTML = `
+        <h2 class="font-semibold text-lg mb-3">#${idx + 1}. ${item.q}</h2>
+        <fieldset class="space-y-2" id="q-${idx}">
+          ${item.choices.map((c, i) => `
+            <label class="flex items-start gap-3 p-2 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q-${idx}" value="${i}" class="mt-1">
+              <span>${c}</span>
+            </label>
+          `).join("")}
+        </fieldset>
+        <div class="mt-3 hidden" id="exp-${idx}">
+          <div class="rounded-xl border border-red-200 bg-red-50 p-3">
+            <p class="font-semibold text-red-700">Solution:</p>
+            <pre class="whitespace-pre-wrap text-sm text-red-800 mt-1">${item.sol}</pre>
+          </div>
+        </div>
+      `;
+      quiz.appendChild(card);
+    });
+
+    // ---- LOGIC ----
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let correct = 0;
+      questions.forEach((item, idx) => {
+        const radios = document.querySelectorAll(`input[name="q-${idx}"]`);
+        let chosen = -1;
+        radios.forEach(r => { if (r.checked) chosen = +r.value; });
+
+        const field = document.getElementById(`q-${idx}`);
+        const expl  = document.getElementById(`exp-${idx}`);
+
+        // clean previous state
+        field.parentElement.classList.remove("ring-2","ring-green-300","ring-red-300");
+
+        if (chosen === item.a) {
+          correct++;
+          expl.classList.add("hidden");
+          field.parentElement.classList.add("ring-2","ring-green-300");
+        } else {
+          expl.classList.remove("hidden");
+          field.parentElement.classList.add("ring-2","ring-red-300");
+        }
+      });
+
+      const scoreBox = document.getElementById("scoreBox");
+      scoreBox.textContent = `Score: ${correct} / ${questions.length}`;
+      scoreBox.className = "sm:ml-auto text-lg font-semibold " +
+        (correct >= 20 ? "text-green-700" : correct >= 13 ? "text-amber-700" : "text-red-700");
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      // clear selections and explanations
+      questions.forEach((_, idx) => {
+        const radios = document.querySelectorAll(`input[name="q-${idx}"]`);
+        radios.forEach(r => r.checked = false);
+        document.getElementById(`exp-${idx}`).classList.add("hidden");
+        const field = document.getElementById(`q-${idx}`);
+        field.parentElement.classList.remove("ring-2","ring-green-300","ring-red-300");
+      });
+      const scoreBox = document.getElementById("scoreBox");
+      scoreBox.textContent = "";
+      scoreBox.className = "";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
