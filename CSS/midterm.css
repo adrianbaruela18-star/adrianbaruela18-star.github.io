@@ -52,7 +52,7 @@ body {
     position: relative;
     min-height: 100vh;
     line-height: 1.6;
-    cursor:all-scroll;
+    cursor:auto;
 }
 
 ::selection {
@@ -3969,4 +3969,5 @@ body {
         }
 
         /* End of resume.css */
+
 
