@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Adrian Dela Cruz - Visual Gallery. Explore my creative work and project showcase.">
-    <title>Neural Gallery 2026 - Adrian Dela Cruz</title>
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖼️</text></svg>">
-    <link rel="stylesheet" href="CSS/midterm.css">
+    <meta name="description" content="Adrian Dela Cruz - Professional Portfolio 2026. Explore cutting-edge web development projects, skills, and expertise.">
+    <meta name="keywords" content="web development, portfolio, PHP, MySQL, JavaScript, React, Adrian Dela Cruz">
+    <meta name="author" content="Adrian Dela Cruz">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Adrian Dela Cruz - Portfolio 2026">
+    <meta property="og:description" content="Explore my professional portfolio featuring innovative web development projects">
+    <meta property="og:type" content="website">
+    
+    <title>Adrian Dela Cruz - Professional Portfolio 2026</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <link rel="stylesheet" href="css/midterm.css">
 </head>
 <body>
     
@@ -14,30 +25,29 @@
     <div id="loading-screen">
         <div class="loader"></div>
     </div>
-  
-    <!-- Background Video -->
-    <video autoplay muted loop id="urvid" playsinline aria-hidden="true">
-        <source src="ACT12_BARUELA/21.mp4" type="video/mp4">
-        <source src="ACT12_BARUELA/21.webm" type="video/webm">
-        <source src="ACT12_BARUELA/21.ogv" type="video/ogg">
-        Your browser does not support the video tag.
-    </video>
     
     <!-- Background Effects -->
-    <div class="holo-video-overlay"></div>
-    <div class="neural-particles" id="neural-particles" aria-hidden="true"></div>
+    <div class="neural-bg"></div>
+    <div class="holo-overlay"></div>
     
     <!-- Header -->
     <header class="cyber-header">
         <div class="container">
             <div class="header-content">
-                <div class="logo-text">
-                    <h1 data-text="NEURAL_GALLERY.EXE">NEURAL_GALLERY.EXE</h1>
-                    <span class="version-tag">v2026.1.0 • VISUAL_MODULE</span>
+                <div class="logo-section">
+                    <div class="avatar-container">
+                        <img src="ACT12_BARUELA/19.jpg" alt="Adrian Dela Cruz" class="cyber-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-glow"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h1 data-text="ADRIAN_PORTFOLIO.EXE">ADRIAN_PORTFOLIO.EXE</h1>
+                        <span class="version-tag">v2026.1.0 • ENHANCED</span>
+                    </div>
                 </div>
                 
                 <nav class="cyber-nav" role="navigation" aria-label="Main Navigation">
-                    <a href="index.html" class="nav-cell">
+                    <a href="index.html" class="nav-cell active" aria-current="page">
                         <span>01_HOME</span>
                         <div class="cell-glow"></div>
                     </a>
@@ -45,7 +55,7 @@
                         <span>02_RESUME</span>
                         <div class="cell-glow"></div>
                     </a>
-                    <a href="gallery.html" class="nav-cell active" aria-current="page">
+                    <a href="gallery.html" class="nav-cell">
                         <span>03_GALLERY</span>
                         <div class="cell-glow"></div>
                     </a>
@@ -53,7 +63,7 @@
                         <span>04_PROJECTS</span>
                         <div class="cell-glow"></div>
                     </a>
-                    <a href="index.html#contact" class="nav-cell">
+                    <a href="#contact" class="nav-cell">
                         <span>05_CONTACT</span>
                         <div class="cell-glow"></div>
                     </a>
@@ -61,51 +71,246 @@
             </div>
         </div>
     </header>
-    
-    <!-- Slideshow Container -->
-    <main class="slideshow-container-clean">
-        <div class="slideshow-clean" id="main-slideshow" role="region" aria-label="Image Gallery Slideshow">
-            
-            <!-- Navigation Buttons -->
-            <button class="slide-btn prev-btn" onclick="changeSlide(-1)" aria-label="Previous image">◄</button>
-            <button class="slide-btn next-btn" onclick="changeSlide(1)" aria-label="Next image">►</button>
-            
-            <!-- Slide Indicators -->
-            <div class="slide-indicators-clean" id="indicators-container" role="tablist" aria-label="Gallery navigation"></div>
-            
-            <!-- Image Counter -->
-            <div class="image-counter-clean" aria-live="polite">
-                <span id="current-image">1</span> / <span id="total-images">0</span>
-            </div>
-            
-            <!-- Format Indicator -->
-            <div class="format-indicator-clean" aria-live="polite">
-                <span id="current-format">JPG</span>
-            </div>
-        </div>
-    </main>
- 
-    <!-- Control Panel -->
-    <div class="content-clean" role="toolbar" aria-label="Gallery Controls">
-        <div class="control-buttons-clean">
-            <button id="pause_button" onclick="toggleVideo()" aria-label="Toggle video playback">
-                PAUSE_VIDEO
-            </button>
-            <button id="slideshow_toggle" onclick="toggleSlideshow()" aria-label="Toggle slideshow">
-                PAUSE_SLIDES
-            </button>
-            <button id="fullscreen_btn" onclick="toggleFullscreen()" aria-label="Toggle fullscreen mode">
-                FULLSCREEN
-            </button>
-            <button id="download_btn" onclick="downloadCurrentImage()" aria-label="Download current image">
-                DOWNLOAD
-            </button>
-            <a href="index.html" class="home-btn" aria-label="Return to home page">
-                ← RETURN_HOME
-            </a>
-        </div>
-    </div>
 
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SYSTEM_ONLINE</span>
+                    </div>
+                    
+                    <h2 class="hero-title">
+                        <span class="title-line">WELCOME TO</span>
+                        <span class="title-line gradient-text">THE FUTURE</span>
+                        <span class="title-line">OF PORTFOLIOS</span>
+                    </h2>
+                    
+                    <p class="hero-description">
+                        Immerse yourself in a neural-enhanced digital experience. 
+                        Explore my work through advanced UI/UX paradigms designed for 2026. 
+                        Discover cutting-edge web development projects powered by modern technologies.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">2026</span>
+                            <span class="stat-label">DESIGN_YEAR</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">100%</span>
+                            <span class="stat-label">CYBER_READY</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">∞</span>
+                            <span class="stat-label">POSSIBILITIES</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <button class="cyber-btn primary" onclick="scrollToSection('about')" aria-label="Explore Portfolio">
+                            <span class="btn-text">⚡ INITIATE_EXPLORATION</span>
+                        </button>
+                        <a href="baruela_resume.html" class="cyber-btn secondary" aria-label="View Resume">
+                            <span class="btn-text">📄 DOWNLOAD_DATA</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hologram-container">
+                        <div class="hologram-grid">
+                            <div class="holo-module">
+                                <div class="module-content">
+                                    <div class="module-icon">⚡</div>
+                                    <h3>NEURAL_SKILLS</h3>
+                                    <div class="skill-bars">
+                                        <div class="skill-bar" style="--progress: 95%">JavaScript</div>
+                                        <div class="skill-bar" style="--progress: 88%">React</div>
+                                        <div class="skill-bar" style="--progress: 92%">Python</div>
+                                    </div>
+                                </div>
+                                <div class="spice-overlay"></div>
+                            </div>
+                            
+                            <div class="holo-module">
+                                <div class="module-content">
+                                    <div class="module-icon">🚀</div>
+                                    <h3>ACTIVE_PROJECTS</h3>
+                                    <div class="project-grid">
+                                        <div class="project-dot active" title="Active"></div>
+                                        <div class="project-dot pending" title="In Progress"></div>
+                                        <div class="project-dot complete" title="Completed"></div>
+                                        <div class="project-dot active" title="Active"></div>
+                                        <div class="project-dot complete" title="Completed"></div>
+                                        <div class="project-dot active" title="Active"></div>
+                                    </div>
+                                </div>
+                                <div class="spice-overlay"></div>
+                            </div>
+                            
+                            <div class="holo-module">
+                                <div class="module-content">
+                                    <div class="module-icon">🎯</div>
+                                    <h3>EXPERIENCE_LVL</h3>
+                                    <div class="exp-circle">
+                                        <div class="exp-progress" style="--angle: 306deg;"></div>
+                                        <span class="exp-value">85%</span>
+                                    </div>
+                                </div>
+                                <div class="spice-overlay"></div>
+                            </div>
+                            
+                            <div class="holo-module">
+                                <div class="module-content">
+                                    <div class="module-icon">📡</div>
+                                    <h3>NETWORK_STATUS</h3>
+                                    <div class="network-visual">
+                                        <div class="network-node active" title="Online"></div>
+                                        <div class="network-node active" title="Online"></div>
+                                        <div class="network-node pending" title="Connecting"></div>
+                                    </div>
+                                </div>
+                                <div class="spice-overlay"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="central-holo">
+                            <div class="holo-ring"></div>
+                            <div class="holo-core">
+                                <span class="core-text">AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="particle-field" aria-hidden="true">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio-grid-section fade-in-on-scroll" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">DIGITAL_PORTFOLIO</h2>
+                <p class="section-subtitle">Explore my neural-enhanced project matrix</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card" onclick="window.location.href='baruela_resume.html'" tabindex="0" role="button" aria-label="View Resume">
+                    <div class="card-icon">📄</div>
+                    <h3 class="card-title">NEURAL_RESUME</h3>
+                    <p class="card-description">
+                        Access my professional data matrix containing experience, skills, and educational algorithms. 
+                        Comprehensive overview of my technical expertise and professional journey.
+                    </p>
+                    <a href="baruela_resume.html" class="card-link" aria-label="Access Resume Data">Access Data →</a>
+                    <div class="spice-overlay"></div>
+                </div>
+                
+                <div class="portfolio-card" onclick="window.location.href='gallery.html'" tabindex="0" role="button" aria-label="View Gallery">
+                    <div class="card-icon">🖼️</div>
+                    <h3 class="card-title">VISUAL_GALLERY</h3>
+                    <p class="card-description">
+                        Immerse in my visual project database with advanced format support and neural processing. 
+                        High-resolution showcase of creative work and achievements.
+                    </p>
+                    <a href="gallery.html" class="card-link" aria-label="Enter Visual Gallery">Enter Gallery →</a>
+                    <div class="spice-overlay"></div>
+                </div>
+                
+                <div class="portfolio-card" onclick="window.location.href='projects.html'" tabindex="0" role="button" aria-label="View Projects">
+                    <div class="card-icon">🌐</div>
+                    <h3 class="card-title">LIVE_PROJECTS</h3>
+                    <p class="card-description">
+                        Explore my deployed web applications and systems with real-time functionality. 
+                        Interactive demonstrations of full-stack development expertise.
+                    </p>
+                    <a href="projects.html" class="card-link" aria-label="View Live Projects">View Projects →</a>
+                    <div class="spice-overlay"></div>
+                </div>
+                
+                <div class="portfolio-card" tabindex="0" role="button">
+                    <div class="card-icon">🧠</div>
+                    <h3 class="card-title">TECH_STACK</h3>
+                    <p class="card-description">
+                        Powered by PHP, MySQL, JavaScript, React, Python, and the latest web development frameworks. 
+                        Cutting-edge technologies for modern web solutions.
+                    </p>
+                    <a href="#contact" class="card-link" aria-label="View Technology Stack">View Stack →</a>
+                    <div class="spice-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section fade-in-on-scroll" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ESTABLISH_CONNECTION</h2>
+                <p class="section-subtitle">Initialize communication protocols</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-info">
+                        <a href="tel:+639363083501" style="color: inherit; text-decoration: none;">+63 936 308 3501</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-info">
+                        <a href="mailto:adrianbaruela0@gmail.com" style="color: inherit; text-decoration: none;">adrianbaruela0@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-info">Sappaac, Bangued, Abra</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🎓</div>
+                    <div class="contact-info">Data Center College PH</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 ADRIAN DELA CRUZ • JHAYPRO v2026.1.0 ENHANCED EDITION</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                    Crafted with 💙 using cutting-edge web technologies
+                </p>
+            </div>
+            <div class="footer-links">
+                  <a href="index.html" class="footer-link">HOME</a>
+                <a href="baruela_resume.html" class="footer-link">RESUME</a>
+                <a href="gallery.html" class="footer-link">GALLERY</a>
+                 <a href="404.html" class="footer-link">404</a>
+                  <a href="achievements.html" class="footer-link">ACHIEVEMENTS</a>
+                   <a href="skills.html" class="footer-link">SKILLS</a>
+                <a href="projects.html" class="footer-link">PROJECTS</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
     <script src="js/scripts.js"></script>
 </body>
 </html>
