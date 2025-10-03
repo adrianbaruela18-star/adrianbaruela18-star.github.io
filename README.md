@@ -402,3 +402,6 @@ This portfolio is created for Adrian Dela Cruz's midterm examination.
 
 *Last Updated: October 2025*  
 *Version: 2026.1.0 ENHANCED EDITION*
+---
+**heres my link of my page**
+https://adrianbaruela18-star.github.io/
