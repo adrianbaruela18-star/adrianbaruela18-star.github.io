@@ -368,7 +368,7 @@ If you need to customize anything:
 1. **Colors**: Edit CSS variables in `styles.css`
 2. **Content**: Edit HTML files directly
 3. **Images**: Replace in `ACT12_BARUELA/` folder
-4. **Animations**: Modify keyframes in `styles.css`
+4. **Animations**: Modify keyframes in `midterm.css`
 5. **Functions**: Update `scripts.js`
 
 ---
