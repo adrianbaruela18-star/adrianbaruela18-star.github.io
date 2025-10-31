@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Adrian Dela Cruz Baruela</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        :root { --primary: #FF2D55; --accent: #FF9500; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .gradient-text { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); transition: all 0.3s ease; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255, 45, 85, 0.4); }
+        .hover-lift { transition: transform 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-8px); }
+        .navbar-scroll { transition: all 0.3s ease; }
+        .navbar-scroll.scrolled { background: rgba(9, 9, 11, 0.95); backdrop-filter: blur(20px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+        .skill-progress { position: relative; overflow: hidden; }
+        .skill-progress::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation: shimmer 2s infinite; }
+        @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 navbar-scroll" id="navbar">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between py-6">
+                <a href="index.html" class="flex items-center gap-4 group">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                        <img src="profile.jpg" alt="Adrian Baruela" class="relative w-16 h-16 rounded-full object-cover border-2 border-pink-500/50 group-hover:border-pink-500 transition-all ring-4 ring-pink-500/10">
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white group-hover:text-pink-500 transition-colors">Adrian Baruela</h1>
+                        <p class="text-sm text-zinc-400">Full Stack Developer</p>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center gap-2">
+                    <a href="index.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Home</a>
+                    <a href="about.html" class="px-5 py-2.5 text-white font-medium rounded-xl bg-white/5 transition-all">About</a>
+                    <a href="portfolio.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Portfolio</a>
+                    <a href="gallery.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Gallery</a>
+                    <a href="contact.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Contact</a>
+                </div>
+                <div class="hidden lg:block">
+                    <a href="contact.html" class="btn-primary px-6 py-3 rounded-xl text-white font-semibold inline-flex items-center gap-2">
+                        <i class="fas fa-envelope"></i>
+                        Hire Me
+                    </a>
+                </div>
+                <button class="lg:hidden text-white p-3 hover:bg-white/5 rounded-xl transition-all" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div class="lg:hidden hidden pb-6" id="mobile-menu">
+                <div class="flex flex-col gap-2 glass rounded-2xl p-4">
+                    <a href="index.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Home</a>
+                    <a href="about.html" class="px-4 py-3 text-white font-medium rounded-xl bg-white/5">About</a>
+                    <a href="portfolio.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Portfolio</a>
+                    <a href="gallery.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Gallery</a>
+                    <a href="contact.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="relative pt-40 pb-20 overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+        </div>
+        <div class="container mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center animate-fadeInUp">
+                <span class="inline-block px-5 py-2 glass rounded-full text-sm font-semibold text-pink-500 mb-4">Get to Know Me</span>
+                <h1 class="text-6xl md:text-7xl font-bold text-white mb-6">About Me</h1>
+                <p class="text-xl text-zinc-400 max-w-2xl mx-auto">Passionate developer dedicated to creating innovative digital solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-pink-500 to-orange-500 rounded-3xl blur-3xl opacity-20 animate-float"></div>
+                        <div class="relative glass rounded-3xl p-6 hover-lift">
+                            <img src="mine.jpg" alt="About Me" class="rounded-2xl w-full aspect-square object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="space-y-6 order-1 lg:order-2">
+                    <span class="inline-block px-5 py-2 glass rounded-full text-sm font-semibold text-pink-500">My Story</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight">
+                        Creative Developer & <span class="gradient-text">Problem Solver</span>
+                    </h2>
+                    <div class="space-y-4 text-base text-zinc-300 leading-relaxed">
+                        <p>
+                            I'm a passionate <span class="text-white font-semibold">Information technology student</span> specializing in building practical solutions that solve real-world problems. My journey in technology started with curiosity about how websites work.
+                        </p>
+                        <p>
+                            I focus on three main areas: building <span class="text-white font-semibold">PHP-based information systems</span> for schools and businesses, creating <span class="text-white font-semibold">interactive React applications</span>, and crafting <span class="text-white font-semibold">stunning HTML/CSS websites</span>.
+                        </p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="glass rounded-xl p-4 hover-lift">
+                            <i class="fas fa-check-circle text-xl text-pink-500 mb-2"></i>
+                            <h4 class="font-bold text-white text-sm mb-1">Clean Code</h4>
+                            <p class="text-xs text-zinc-400">Maintainable & scalable</p>
+                        </div>
+                        <div class="glass rounded-xl p-4 hover-lift">
+                            <i class="fas fa-check-circle text-xl text-pink-500 mb-2"></i>
+                            <h4 class="font-bold text-white text-sm mb-1">Fast Delivery</h4>
+                            <p class="text-xs text-zinc-400">On-time completion</p>
+                        </div>
+                        <div class="glass rounded-xl p-4 hover-lift">
+                            <i class="fas fa-check-circle text-xl text-pink-500 mb-2"></i>
+                            <h4 class="font-bold text-white text-sm mb-1">Modern Design</h4>
+                            <p class="text-xs text-zinc-400">Beautiful interfaces</p>
+                        </div>
+                        <div class="glass rounded-xl p-4 hover-lift">
+                            <i class="fas fa-check-circle text-xl text-pink-500 mb-2"></i>
+                            <h4 class="font-bold text-white text-sm mb-1">Full Support</h4>
+                            <p class="text-xs text-zinc-400">Ongoing maintenance</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="contact.html" class="btn-primary px-6 py-3 rounded-xl text-white font-semibold inline-flex items-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            Hire Me
+                        </a>
+                        <a href="resume.pdf" download class="glass px-6 py-3 rounded-xl text-white font-semibold inline-flex items-center gap-2 hover:bg-white/10 transition-all">
+                            <i class="fas fa-download"></i>
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="py-20 bg-zinc-900/30">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-5 py-2 glass rounded-full text-sm font-semibold text-pink-500 mb-4">My Expertise</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Technical Skills</h2>
+                <p class="text-lg text-zinc-400 max-w-2xl mx-auto">Proficient in various programming languages and frameworks</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Frontend -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-3 mb-6">
+                        <i class="fas fa-laptop-code text-pink-500"></i>
+                        Frontend Development
+                    </h3>
+
+                    <div class="glass rounded-xl p-6 hover-lift">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-bold text-white">HTML5 & CSS3</span>
+                            <span class="font-bold text-pink-500">98%</span>
+                        </div>
+                        <div class="w-full bg-zinc-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-pink-500 to-orange-500 rounded-full" style="width: 98%"></div>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-xl p-6 hover-lift">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-bold text-white">JavaScript / TypeScript</span>
+                            <span class="font-bold text-pink-500">92%</span>
+                        </div>
+                        <div class="w-full bg-zinc-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-pink-500 to-orange-500 rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-xl p-6 hover-lift">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-bold text-white">React.js</span>
+                            <span class="font-bold text-pink-500">90%</span>
+                        </div>
+                        <div class="w-full bg-zinc-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-pink-500 to-orange-500 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-xl p-6 hover-lift">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-bold text-white">Tailwind CSS</span>
+                            <span class="font-bold text-pink-500">96%</span>
+                        </div>
+                        <div class="w-full bg-zinc-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-pink-500 to-orange-500 rounded-full" style="width: 96%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-3 mb-6">
+                        <i class="fas fa-server text-orange-500"></i>
+                        Backend Development
+                    </h3>
+
+                    <div class="glass rounded-xl p-6 hover-lift">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-bold text-white">PHP / Laravel</span>
+                            <span class="font-bold text-orange-500">95%</span>
+                        </div>
+                        <div class="w-full bg-zinc-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-xl p-6 hover-lift">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-bold text-white">MySQL / PostgreSQL</span>
+                            <span class="font-bold text-orange-500">88%</span>
+                        </div>
+                        <div class="w-full bg-zinc-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-xl p-6 hover-lift">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-bold text-white">RESTful API</span>
+                            <span class="font-bold text-orange-500">90%</span>
+                        </div>
+                        <div class="w-full bg-zinc-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-xl p-6 hover-lift">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-bold text-white">Git & GitHub</span>
+                            <span class="font-bold text-orange-500">85%</span>
+                        </div>
+                        <div class="w-full bg-zinc-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="skill-progress h-full bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-5 py-2 glass rounded-full text-sm font-semibold text-pink-500 mb-4">My Journey</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Education & Experience</h2>
+                <p class="text-lg text-zinc-400 max-w-2xl mx-auto">My academic background and professional experience</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Education -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-3 mb-6">
+                        <i class="fas fa-graduation-cap text-pink-500"></i>
+                        Education
+                    </h3>
+
+                    <div class="glass rounded-xl p-6 hover-lift border-l-4 border-pink-500">
+                        <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1">BS Information technology</h4>
+                                <p class="text-pink-500 font-semibold">Data Center College of the Philippines-Bangued</p>
+                            </div>
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-400 text-sm rounded-full font-semibold">2023 - 2026</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Software development, database management, web technologies, and information systems.
+                        </p>
+                    </div>
+
+                    <div class="glass rounded-xl p-6 hover-lift border-l-4 border-pink-500">
+                        <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1">Web Development Bootcamp</h4>
+                                <p class="text-pink-500 font-semibold">Online Platform</p>
+                            </div>
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-400 text-sm rounded-full font-semibold">2025</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Full-stack development with React, PHP Laravel, and modern web technologies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-3 mb-6">
+                        <i class="fas fa-briefcase text-orange-500"></i>
+                        Work Experience
+                    </h3>
+
+                    <div class="glass rounded-xl p-6 hover-lift border-l-4 border-orange-500">
+                        <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1">Freelance Developer</h4>
+                                <p class="text-orange-500 font-semibold">Self-Employed</p>
+                            </div>
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-400 text-sm rounded-full font-semibold">2024 - Present</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Building custom information systems, web apps, and websites for various clients.
+                        </p>
+                    </div>
+
+                    <div class="glass rounded-xl p-6 hover-lift border-l-4 border-orange-500">
+                        <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1">Aspirant Web Developer</h4>
+                                <p class="text-orange-500 font-semibold">Local Agency</p>
+                            </div>
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-400 text-sm rounded-full font-semibold">Present</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Developed responsive websites and learned professional development practices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-orange-500/10"></div>
+        <div class="container mx-auto px-6 lg:px-8 text-center relative z-10">
+            <div class="max-w-3xl mx-auto glass rounded-3xl p-10">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Interested in Working Together?</h2>
+                <p class="text-lg text-zinc-300 mb-8 leading-relaxed">
+                    I'm always open to discussing new projects and creative ideas.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="contact.html" class="btn-primary px-8 py-3 rounded-xl text-white font-semibold inline-flex items-center gap-2">
+                        <i class="fas fa-paper-plane"></i>
+                        Get In Touch
+                    </a>
+                    <a href="portfolio.html" class="glass px-8 py-3 rounded-xl text-white font-semibold inline-flex items-center gap-2 hover:bg-white/10 transition-all">
+                        <i class="fas fa-briefcase"></i>
+                        View Portfolio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900/50 pt-16 pb-8 border-t border-zinc-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="profile.jpg" alt="Adrian Baruela" class="w-12 h-12 rounded-full object-cover border-2 border-pink-500/50">
+                        <span class="text-lg font-bold text-white">Adrian Baruela</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-4">Full Stack Developer passionate about creating innovative digital solutions.</p>
+                    <div class="flex gap-2">
+                      <a href="https://github.com/adrianbaruela18-star" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-github"></i></a>
+                        <a href="www.linkedin.com/in/adrian-baruela-bb6940394" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://web.facebook.com/adrian.baruela.94" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/adrnbrla?igsh=MXNqYnQ1d21nMDQ4dg==" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="text-white font-bold mb-4">Quick Links</h6>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-zinc-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="portfolio.html" class="text-zinc-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="gallery.html" class="text-zinc-400 hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="text-zinc-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="text-white font-bold mb-4">Services</h6>
+                    <ul class="space-y-2 text-sm">
+                        <li class="text-zinc-400">Information Systems</li>
+                        <li class="text-zinc-400">Web Development</li>
+                        <li class="text-zinc-400">React Applications</li>
+                        <li class="text-zinc-400">UI/UX Design</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="text-white font-bold mb-4">Contact Info</h6>
+                    <div class="space-y-2 text-sm">
+                        <p class="flex items-center text-zinc-400 gap-2"><i class="fas fa-envelope text-pink-500"></i><span>adrianbaruela0@gmail.com</span></p>
+                        <p class="flex items-center text-zinc-400 gap-2"><i class="fas fa-phone text-pink-500"></i><span>936 308 3501</span></p>
+                        <p class="flex items-start text-zinc-400 gap-2"><i class="fas fa-map-marker-alt text-pink-500 mt-1"></i><span>Sappaac, Bangued, Abra</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-zinc-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-500">
+                <p>© 2025 Adrian Baruela. All Rights Reserved.</p>
+                <p class="mt-2 md:mt-0">JHAYPRO <i class="fas fa-heart text-pink-500 mx-1"></i> WEB SOLUTIONS</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 btn-primary text-white rounded-full shadow-2xl opacity-0 invisible hover:scale-110 transition-all z-50 flex items-center justify-center">
+        <i class="fas fa-chevron-up text-xl"></i>
+    </button>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('opacity-0', window.pageYOffset <= 300);
+            backToTop.classList.toggle('invisible', window.pageYOffset <= 300);
+            document.getElementById('navbar').classList.toggle('scrolled', window.pageYOffset > 50);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+</html>
