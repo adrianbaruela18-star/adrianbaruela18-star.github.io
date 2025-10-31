@@ -1,316 +1,527 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Adrian Dela Cruz - Professional Portfolio 2026. Explore cutting-edge web development projects, skills, and expertise.">
-    <meta name="keywords" content="web development, portfolio, PHP, MySQL, JavaScript, React, Adrian Dela Cruz">
-    <meta name="author" content="Adrian Dela Cruz">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Adrian Dela Cruz - Portfolio 2026">
-    <meta property="og:description" content="Explore my professional portfolio featuring innovative web development projects">
-    <meta property="og:type" content="website">
-    
-    <title>Adrian Dela Cruz - Professional Portfolio 2026</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
-    
-    <link rel="stylesheet" href="CSS/midterm.css">
+    <title>Adrian Dela Cruz Baruela - Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        :root { --primary: #FF2D55; --accent: #FF9500; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-slideIn { animation: slideIn 0.8s ease-out forwards; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .gradient-text { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(255, 45, 85, 0.2); }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); transition: all 0.3s ease; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255, 45, 85, 0.4); }
+        .skill-progress { position: relative; overflow: hidden; }
+        .skill-progress::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation: shimmer 2s infinite; }
+        @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
+        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-8px) scale(1.02); }
+        .navbar-scroll { transition: all 0.3s ease; }
+        .navbar-scroll.scrolled { background: rgba(9, 9, 11, 0.95); backdrop-filter: blur(20px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+        .project-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .card-hover:hover .project-image { transform: scale(1.1); }
+    </style>
 </head>
-<body>
-    
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="loader"></div>
-    </div>
-    
-    <!-- Background Effects -->
-    <div class="neural-bg"></div>
-    <div class="holo-overlay"></div>
-    
-    <!-- Header -->
-    <header class="cyber-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-section">
-                    <div class="avatar-container">
-                        <img src="ACT12_BARUELA/19.jpg" alt="Adrian Dela Cruz" class="cyber-avatar">
-                        <div class="avatar-ring"></div>
-                        <div class="avatar-glow"></div>
+<body class="bg-zinc-950 text-white antialiased">
+
+    <!-- Enhanced Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 navbar-scroll" id="navbar">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between py-6">
+                <!-- Logo with Larger Profile -->
+                <a href="index.html" class="flex items-center gap-4 group">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                        <img src="profile.jpg" alt="Adrian Baruela" class="relative w-16 h-16 rounded-full object-cover border-2 border-pink-500/50 group-hover:border-pink-500 transition-all ring-4 ring-pink-500/10">
                     </div>
-                    <div class="logo-text">
-                        <h1 data-text="ADRIAN_PORTFOLIO.EXE">ADRIAN_PORTFOLIO.EXE</h1>
-                        <span class="version-tag">v2026.1.0 • ENHANCED</span>
+                    <div>
+                        <h1 class="text-xl font-bold text-white group-hover:text-pink-500 transition-colors">Adrian Baruela</h1>
+                        <p class="text-sm text-zinc-400">Full Stack Developer</p>
                     </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-2">
+                    <a href="index.html" class="px-5 py-2.5 text-white font-medium rounded-xl bg-white/5 transition-all">Home</a>
+                    <a href="about.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">About</a>
+                    <a href="portfolio.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Portfolio</a>
+                    <a href="gallery.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Gallery</a>
+                    <a href="contact.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Contact</a>
                 </div>
-                
-                <nav class="cyber-nav" role="navigation" aria-label="Main Navigation">
-                    <a href="index.html" class="nav-cell active" aria-current="page">
-                        <span>01_HOME</span>
-                        <div class="cell-glow"></div>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <a href="contact.html" class="btn-primary px-6 py-3 rounded-xl text-white font-semibold inline-flex items-center gap-2">
+                        <i class="fas fa-envelope"></i>
+                        Hire Me
                     </a>
-                    <a href="baruela_resume.html" class="nav-cell">
-                        <span>02_RESUME</span>
-                        <div class="cell-glow"></div>
-                    </a>
-                    <a href="gallery.html" class="nav-cell">
-                        <span>03_GALLERY</span>
-                        <div class="cell-glow"></div>
-                    </a>
-                    <a href="projects.html" class="nav-cell">
-                        <span>04_PROJECTS</span>
-                        <div class="cell-glow"></div>
-                    </a>
-                    <a href="#contact" class="nav-cell">
-                        <span>05_CONTACT</span>
-                        <div class="cell-glow"></div>
-                    </a>
-                </nav>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-white p-3 hover:bg-white/5 rounded-xl transition-all" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden hidden pb-6" id="mobile-menu">
+                <div class="flex flex-col gap-2 glass rounded-2xl p-4">
+                    <a href="index.html" class="px-4 py-3 text-white font-medium rounded-xl bg-white/5">Home</a>
+                    <a href="about.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">About</a>
+                    <a href="portfolio.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Portfolio</a>
+                    <a href="gallery.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Gallery</a>
+                    <a href="contact.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Contact</a>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <div class="status-indicator">
-                        <span class="status-dot"></span>
-                        <span class="status-text">SYSTEM_ONLINE</span>
+    <!-- Hero Section with Modern UI/UX -->
+    <section id="home" class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float" style="animation-delay: 4s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8 animate-slideIn">
+                    <!-- Status Badge -->
+                    <div class="inline-flex items-center gap-3 px-5 py-3 glass rounded-full">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
+                        <span class="text-zinc-300 font-medium">Available for Freelance</span>
                     </div>
-                    
-                    <h2 class="hero-title">
-                        <span class="title-line">WELCOME TO</span>
-                        <span class="title-line gradient-text">THE FUTURE</span>
-                        <span class="title-line">OF PORTFOLIOS</span>
-                    </h2>
-                    
-                    <p class="hero-description">
-                        Immerse yourself in a neural-enhanced digital experience. 
-                        Explore my work through advanced UI/UX paradigms designed for 2026. 
-                        Discover cutting-edge web development projects powered by modern technologies.
+
+                    <!-- Main Heading -->
+                    <div class="space-y-6">
+                        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+                            Hi, I'm<br/>
+                            <span class="gradient-text">Adrian</span>
+                        </h1>
+                        <p class="text-2xl md:text-3xl text-zinc-300 font-medium">
+                            Full Stack Developer<br/>
+                            <span class="text-zinc-400 text-xl">& Software Engineer</span>
+                        </p>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-lg text-zinc-400 leading-relaxed max-w-xl">
+                        Computer Science student specializing in building <span class="text-white font-semibold">PHP information systems</span>, <span class="text-white font-semibold">React applications</span>, and <span class="text-white font-semibold">stunning HTML/CSS websites</span>. Transforming ideas into functional, elegant solutions.
                     </p>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">2026</span>
-                            <span class="stat-label">DESIGN_YEAR</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">100%</span>
-                            <span class="stat-label">CYBER_READY</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">∞</span>
-                            <span class="stat-label">POSSIBILITIES</span>
-                        </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="portfolio.html" class="btn-primary px-8 py-4 rounded-xl text-white font-semibold inline-flex items-center gap-3 text-lg">
+                            <i class="fas fa-briefcase"></i>
+                            View My Work
+                        </a>
+                        <a href="contact.html" class="px-8 py-4 glass rounded-xl text-white font-semibold inline-flex items-center gap-3 hover:bg-white/10 transition-all text-lg">
+                            <i class="fas fa-paper-plane"></i>
+                            Get In Touch
+                        </a>
                     </div>
-                    
-                    <div class="cta-section">
-                        <button class="cyber-btn primary" onclick="scrollToSection('about')" aria-label="Explore Portfolio">
-                            <span class="btn-text">⚡ INITIATE_EXPLORATION</span>
-                        </button>
-                        <a href="baruela_resume.html" class="cyber-btn secondary" aria-label="View Resume">
-                            <span class="btn-text">📄 DOWNLOAD_DATA</span>
+
+                    <!-- Social Links -->
+                    <div class="flex gap-4 pt-4">
+                        <a href="https://github.com/adrianbaruela18-star" class="w-14 h-14 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-white hover:bg-pink-500 transition-all hover:scale-110">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="www.linkedin.com/in/adrian-baruela-bb6940394" class="w-14 h-14 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-white hover:bg-pink-500 transition-all hover:scale-110">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://web.facebook.com/adrian.baruela.94" class="w-14 h-14 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-white hover:bg-pink-500 transition-all hover:scale-110">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/adrnbrla?igsh=MXNqYnQ1d21nMDQ4dg==" class="w-14 h-14 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-white hover:bg-pink-500 transition-all hover:scale-110">
+                            <i class="fab fa-instagram text-xl"></i>
                         </a>
                     </div>
                 </div>
-                
-                <div class="hero-visual">
-                    <div class="hologram-container">
-                        <div class="hologram-grid">
-                            <div class="holo-module">
-                                <div class="module-content">
-                                    <div class="module-icon">⚡</div>
-                                    <h3>NEURAL_SKILLS</h3>
-                                    <div class="skill-bars">
-                                        <div class="skill-bar" style="--progress: 95%">JavaScript</div>
-                                        <div class="skill-bar" style="--progress: 88%">React</div>
-                                        <div class="skill-bar" style="--progress: 92%">Python</div>
-                                    </div>
-                                </div>
-                                <div class="spice-overlay"></div>
+
+                <!-- Right Content - Enhanced Profile Card -->
+                <div class="animate-fadeInUp" style="animation-delay: 0.3s;">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-pink-500 to-orange-500 rounded-3xl blur-3xl opacity-20 animate-float"></div>
+                        <div class="relative glass rounded-3xl p-8 hover-lift">
+                            <div class="relative mb-8">
+                                <div class="absolute inset-0 bg-gradient-to-br from-pink-500 to-orange-500 rounded-2xl blur-xl opacity-50"></div>
+                                <img src="mine.jpg" alt="Profile" class="relative rounded-2xl w-full h-auto object-cover">
                             </div>
                             
-                            <div class="holo-module">
-                                <div class="module-content">
-                                    <div class="module-icon">🚀</div>
-                                    <h3>ACTIVE_PROJECTS</h3>
-                                    <div class="project-grid">
-                                        <div class="project-dot active" title="Active"></div>
-                                        <div class="project-dot pending" title="In Progress"></div>
-                                        <div class="project-dot complete" title="Completed"></div>
-                                        <div class="project-dot active" title="Active"></div>
-                                        <div class="project-dot complete" title="Completed"></div>
-                                        <div class="project-dot active" title="Active"></div>
-                                    </div>
+                            <!-- Stats -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="glass rounded-xl p-6 text-center hover:bg-white/10 transition-all">
+                                    <div class="text-3xl font-bold gradient-text mb-2">2+</div>
+                                    <p class="text-zinc-400 text-sm">Years Experience</p>
                                 </div>
-                                <div class="spice-overlay"></div>
-                            </div>
-                            
-                            <div class="holo-module">
-                                <div class="module-content">
-                                    <div class="module-icon">🎯</div>
-                                    <h3>EXPERIENCE_LVL</h3>
-                                    <div class="exp-circle">
-                                        <div class="exp-progress" style="--angle: 306deg;"></div>
-                                        <span class="exp-value">85%</span>
-                                    </div>
+                                <div class="glass rounded-xl p-6 text-center hover:bg-white/10 transition-all">
+                                    <div class="text-3xl font-bold gradient-text mb-2">50+</div>
+                                    <p class="text-zinc-400 text-sm">Projects Done</p>
                                 </div>
-                                <div class="spice-overlay"></div>
-                            </div>
-                            
-                            <div class="holo-module">
-                                <div class="module-content">
-                                    <div class="module-icon">📡</div>
-                                    <h3>NETWORK_STATUS</h3>
-                                    <div class="network-visual">
-                                        <div class="network-node active" title="Online"></div>
-                                        <div class="network-node active" title="Online"></div>
-                                        <div class="network-node pending" title="Connecting"></div>
-                                    </div>
-                                </div>
-                                <div class="spice-overlay"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="central-holo">
-                            <div class="holo-ring"></div>
-                            <div class="holo-core">
-                                <span class="core-text">AI</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="particle-field" aria-hidden="true">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+            <div class="flex flex-col items-center gap-2 animate-bounce">
+                <span class="text-zinc-400 text-sm">Scroll Down</span>
+                <i class="fas fa-chevron-down text-pink-500"></i>
+            </div>
         </div>
     </section>
 
-    <!-- Portfolio Grid Section -->
-    <section class="portfolio-grid-section fade-in-on-scroll" id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">DIGITAL_PORTFOLIO</h2>
-                <p class="section-subtitle">Explore my neural-enhanced project matrix</p>
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20 animate-fadeInUp">
+                <span class="inline-block px-5 py-2 glass rounded-full text-sm font-semibold text-pink-500 mb-4">About Me</span>
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-6">Who Am I?</h2>
+                <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
+                    Passionate Computer Science student creating practical solutions
+                </p>
             </div>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-card" onclick="window.location.href='baruela_resume.html'" tabindex="0" role="button" aria-label="View Resume">
-                    <div class="card-icon">📄</div>
-                    <h3 class="card-title">NEURAL_RESUME</h3>
-                    <p class="card-description">
-                        Access my professional data matrix containing experience, skills, and educational algorithms. 
-                        Comprehensive overview of my technical expertise and professional journey.
-                    </p>
-                    <a href="baruela_resume.html" class="card-link" aria-label="Access Resume Data">Access Data →</a>
-                    <div class="spice-overlay"></div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="glass rounded-3xl p-10 lg:p-12">
+                    <div class="space-y-6 text-lg text-zinc-300 leading-relaxed">
+                        <p>
+                            I'm a <span class="text-white font-semibold">Information technology student</span> with a passion for building practical web solutions. My journey started with curiosity about how websites work, which grew into developing real-world applications.
+                        </p>
+                        <p>
+                            I specialize in three key areas: creating <span class="text-white font-semibold">PHP-based information systems</span> for schools and businesses, building <span class="text-white font-semibold">interactive React applications</span> like calculators and dashboards, and crafting <span class="text-white font-semibold">beautiful HTML/CSS websites</span> with modern designs.
+                        </p>
+                        <p>
+                            My approach combines clean code, user-friendly interfaces, and problem-solving to deliver projects that work smoothly and look amazing.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6 mt-10">
+                        <div class="text-center p-6 glass rounded-2xl hover-lift">
+                            <div class="text-4xl font-bold gradient-text mb-2">50+</div>
+                            <p class="text-zinc-400">Projects Completed</p>
+                        </div>
+                        <div class="text-center p-6 glass rounded-2xl hover-lift">
+                            <div class="text-4xl font-bold gradient-text mb-2">2</div>
+                            <p class="text-zinc-400">Years Experience</p>
+                        </div>
+                        <div class="text-center p-6 glass rounded-2xl hover-lift">
+                            <div class="text-4xl font-bold gradient-text mb-2">100%</div>
+                            <p class="text-zinc-400">Client Satisfaction</p>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="portfolio-card" onclick="window.location.href='gallery.html'" tabindex="0" role="button" aria-label="View Gallery">
-                    <div class="card-icon">🖼️</div>
-                    <h3 class="card-title">VISUAL_GALLERY</h3>
-                    <p class="card-description">
-                        Immerse in my visual project database with advanced format support and neural processing. 
-                        High-resolution showcase of creative work and achievements.
-                    </p>
-                    <a href="gallery.html" class="card-link" aria-label="Enter Visual Gallery">Enter Gallery →</a>
-                    <div class="spice-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 relative">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20 animate-fadeInUp">
+                <span class="inline-block px-5 py-2 glass rounded-full text-sm font-semibold text-pink-500 mb-4">My Expertise</span>
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-6">Technical Skills</h2>
+                <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
+                    Specialized in modern web technologies and frameworks
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- PHP & Laravel -->
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
+                            <i class="fab fa-php text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">PHP & Laravel</h3>
+                            <p class="text-pink-500 font-semibold">95%</p>
+                        </div>
+                    </div>
+                    <p class="text-zinc-400 mb-4">Building robust information systems and backend solutions</p>
+                    <div class="w-full bg-zinc-800 rounded-full h-3 overflow-hidden">
+                        <div class="skill-progress h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" style="width: 95%"></div>
+                    </div>
                 </div>
-                
-                <div class="portfolio-card" onclick="window.location.href='projects.html'" tabindex="0" role="button" aria-label="View Projects">
-                    <div class="card-icon">🌐</div>
-                    <h3 class="card-title">LIVE_PROJECTS</h3>
-                    <p class="card-description">
-                        Explore my deployed web applications and systems with real-time functionality. 
-                        Interactive demonstrations of full-stack development expertise.
-                    </p>
-                    <a href="projects.html" class="card-link" aria-label="View Live Projects">View Projects →</a>
-                    <div class="spice-overlay"></div>
+
+                <!-- React -->
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center">
+                            <i class="fab fa-react text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">React.js</h3>
+                            <p class="text-cyan-400 font-semibold">90%</p>
+                        </div>
+                    </div>
+                    <p class="text-zinc-400 mb-4">Creating interactive web apps and calculators</p>
+                    <div class="w-full bg-zinc-800 rounded-full h-3 overflow-hidden">
+                        <div class="skill-progress h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" style="width: 90%"></div>
+                    </div>
                 </div>
-                
-                <div class="portfolio-card" tabindex="0" role="button">
-                    <div class="card-icon">🧠</div>
-                    <h3 class="card-title">TECH_STACK</h3>
-                    <p class="card-description">
-                        Powered by PHP, MySQL, JavaScript, React, Python, and the latest web development frameworks. 
-                        Cutting-edge technologies for modern web solutions.
-                    </p>
-                    <a href="#contact" class="card-link" aria-label="View Technology Stack">View Stack →</a>
-                    <div class="spice-overlay"></div>
+
+                <!-- HTML & CSS -->
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
+                            <i class="fab fa-html5 text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">HTML & CSS</h3>
+                            <p class="text-orange-400 font-semibold">98%</p>
+                        </div>
+                    </div>
+                    <p class="text-zinc-400 mb-4">Crafting pixel-perfect, responsive designs</p>
+                    <div class="w-full bg-zinc-800 rounded-full h-3 overflow-hidden">
+                        <div class="skill-progress h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full" style="width: 98%"></div>
+                    </div>
                 </div>
+
+                <!-- JavaScript -->
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center">
+                            <i class="fab fa-js text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">JavaScript</h3>
+                            <p class="text-yellow-400 font-semibold">92%</p>
+                        </div>
+                    </div>
+                    <p class="text-zinc-400 mb-4">Dynamic functionality and interactivity</p>
+                    <div class="w-full bg-zinc-800 rounded-full h-3 overflow-hidden">
+                        <div class="skill-progress h-full bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full" style="width: 92%"></div>
+                    </div>
+                </div>
+
+                <!-- Tailwind CSS -->
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-wind text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Tailwind CSS</h3>
+                            <p class="text-cyan-400 font-semibold">96%</p>
+                        </div>
+                    </div>
+                    <p class="text-zinc-400 mb-4">Modern utility-first CSS framework</p>
+                    <div class="w-full bg-zinc-800 rounded-full h-3 overflow-hidden">
+                        <div class="skill-progress h-full bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full" style="width: 96%"></div>
+                    </div>
+                </div>
+
+                <!-- MySQL -->
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-database text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">MySQL</h3>
+                            <p class="text-blue-400 font-semibold">88%</p>
+                        </div>
+                    </div>
+                    <p class="text-zinc-400 mb-4">Database design and management</p>
+                    <div class="w-full bg-zinc-800 rounded-full h-3 overflow-hidden">
+                        <div class="skill-progress h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 relative">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20 animate-fadeInUp">
+                <span class="inline-block px-5 py-2 glass rounded-full text-sm font-semibold text-pink-500 mb-4">My Work</span>
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-6">Featured Projects</h2>
+                <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
+                    Real projects showcasing my skills in PHP, React, and modern web development
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: PHP Info System -->
+                <div class="glass rounded-2xl overflow-hidden card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="artifacts/images/1.png" alt="Student Information System" class="project-image">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full font-semibold">PHP</span>
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-400 text-xs rounded-full font-semibold">MySQL</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Student Information System</h3>
+                        <p class="text-zinc-400 mb-6">Complete CRUD system with authentication, student management, and report generation</p>
+                        <a href="https://finals1.infinityfreeapp.com/index.php" class="text-pink-500 font-semibold hover:text-orange-500 transition-colors inline-flex items-center gap-2">
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: React Calculator -->
+                <div class="glass rounded-2xl overflow-hidden card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="artifacts/images/2.png" alt="Advanced Calculator" class="project-image">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full font-semibold">React</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full font-semibold">JavaScript</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Advanced Calculator</h3>
+                        <p class="text-zinc-400 mb-6">Feature-rich calculator with scientific functions, history, and beautiful UI</p>
+                        <a href="https://logbk.42web.io/?i=1" class="text-cyan-500 font-semibold hover:text-blue-500 transition-colors inline-flex items-center gap-2">
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: HTML Page -->
+                <div class="glass rounded-2xl overflow-hidden card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="artifacts/images/3.png" alt="Portfolio Website" class="project-image">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-400 text-xs rounded-full font-semibold">HTML</span>
+                            <span class="px-3 py-1 bg-red-500/20 text-red-400 text-xs rounded-full font-semibold">CSS</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Portfolio Website</h3>
+                        <p class="text-zinc-400 mb-6">Modern, responsive portfolio with animations and stunning visual effects</p>
+                        <a href="https://logbk.42web.io/projects/mytemplate.html" class="text-orange-500 font-semibold hover:text-red-500 transition-colors inline-flex items-center gap-2">
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="portfolio.html" class="btn-primary px-10 py-4 rounded-xl text-white font-semibold inline-flex items-center gap-3 text-lg">
+                    View All Projects
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section fade-in-on-scroll" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">ESTABLISH_CONNECTION</h2>
-                <p class="section-subtitle">Initialize communication protocols</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <div class="contact-info">
-                        <a href="tel:+639363083501" style="color: inherit; text-decoration: none;">+63 936 308 3501</a>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-info">
-                        <a href="mailto:adrianbaruela0@gmail.com" style="color: inherit; text-decoration: none;">adrianbaruela0@gmail.com</a>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div class="contact-info">Sappaac, Bangued, Abra</div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">🎓</div>
-                    <div class="contact-info">Data Center College PH</div>
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-orange-500/10"></div>
+        <div class="container mx-auto px-6 lg:px-8 text-center relative z-10">
+            <div class="max-w-4xl mx-auto glass rounded-3xl p-12">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6 text-white">Let's Work Together!</h2>
+                <p class="text-xl text-zinc-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Have a project in mind? Let's collaborate and bring your ideas to life with cutting-edge technology.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="contact.html" class="btn-primary px-10 py-4 rounded-xl text-white font-semibold inline-flex items-center gap-3 text-lg">
+                        <i class="fas fa-paper-plane"></i>
+                        Start a Project
+                    </a>
+                    <a href="about.html" class="glass px-10 py-4 rounded-xl text-white font-semibold inline-flex items-center gap-3 hover:bg-white/10 transition-all text-lg">
+                        <i class="fas fa-user"></i>
+                        Learn More
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="cyber-footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 ADRIAN DELA CRUZ • JHAYPRO v2026.1.0 ENHANCED EDITION</p>
-                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
-                    Crafted with 💙 using cutting-edge web technologies
-                </p>
+    <footer class="bg-zinc-900/50 pt-20 pb-10 border-t border-zinc-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="profile.jpg" alt="Adrian Baruela" class="w-14 h-14 rounded-full object-cover border-2 border-pink-500/50">
+                        <span class="text-xl font-bold text-white">Adrian Baruela</span>
+                    </div>
+                    <p class="text-zinc-400 leading-relaxed mb-6">Full Stack Developer passionate about creating innovative digital solutions.</p>
+                    <div class="flex gap-3">
+                        <a href="https://github.com/adrianbaruela18-star" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-github"></i></a>
+                        <a href="www.linkedin.com/in/adrian-baruela-bb6940394" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://web.facebook.com/adrian.baruela.94" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/adrnbrla?igsh=MXNqYnQ1d21nMDQ4dg==" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="text-white font-bold mb-6 text-lg">Quick Links</h6>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-zinc-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="portfolio.html" class="text-zinc-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="gallery.html" class="text-zinc-400 hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="text-zinc-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="text-white font-bold mb-6 text-lg">Services</h6>
+                    <ul class="space-y-3">
+                        <li class="text-zinc-400">Information Systems</li>
+                        <li class="text-zinc-400">Web Development</li>
+                        <li class="text-zinc-400">React Applications</li>
+                        <li class="text-zinc-400">UI/UX Design</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="text-white font-bold mb-6 text-lg">Contact Info</h6>
+                    <div class="space-y-4">
+                        <p class="flex items-center text-zinc-400 gap-2"><i class="fas fa-envelope text-pink-500"></i><span>adrianbaruela0@gmail.com</span></p>
+                        <p class="flex items-center text-zinc-400 gap-2"><i class="fas fa-phone text-pink-500"></i><span>936 308 3501</span></p>
+                        <p class="flex items-start text-zinc-400 gap-2"><i class="fas fa-map-marker-alt text-pink-500 mt-1"></i><span>Sappaac, Bangued, Abra</span></p>
+                    </div>
+                </div>
             </div>
-            <div class="footer-links">
-                  <a href="index.html" class="footer-link">HOME</a>
-                <a href="baruela_resume.html" class="footer-link">RESUME</a>
-                <a href="gallery.html" class="footer-link">GALLERY</a>
-                 <a href="404.html" class="footer-link">404</a>
-                  <a href="achievements.html" class="footer-link">ACHIEVEMENTS</a>
-                   <a href="skills.html" class="footer-link">SKILLS</a>
-                <a href="projects.html" class="footer-link">PROJECTS</a>
+            <div class="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center text-zinc-500">
+                <p>© 2025 Adrian Baruela. All Rights Reserved.</p>
+                <p class="mt-2 md:mt-0">JHAYPRO <i class="fas fa-heart text-pink-500 mx-1"></i> WEB SOLUTIONS</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/scripts.js"></script>
+    <!-- Back to Top -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 btn-primary text-white rounded-full shadow-2xl opacity-0 invisible hover:scale-110 transition-all z-50 flex items-center justify-center">
+        <i class="fas fa-chevron-up text-xl"></i>
+    </button>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('opacity-0', window.pageYOffset <= 300);
+            backToTop.classList.toggle('invisible', window.pageYOffset <= 300);
+            document.getElementById('navbar').classList.toggle('scrolled', window.pageYOffset > 50);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
 </body>
 </html>
