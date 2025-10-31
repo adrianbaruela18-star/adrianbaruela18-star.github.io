@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Adrian Dela Cruz Baruela</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        :root { --primary: #FF2D55; --accent: #FF9500; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .gradient-text { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); transition: all 0.3s ease; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255, 45, 85, 0.4); }
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); }
+        .navbar-scroll { transition: all 0.3s ease; }
+        .navbar-scroll.scrolled { background: rgba(9, 9, 11, 0.95); backdrop-filter: blur(20px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 navbar-scroll" id="navbar">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between py-6">
+                <a href="index.html" class="flex items-center gap-4 group">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                        <img src="profile.jpg" alt="Adrian Baruela" class="relative w-16 h-16 rounded-full object-cover border-2 border-pink-500/50 group-hover:border-pink-500 transition-all ring-4 ring-pink-500/10">
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white group-hover:text-pink-500 transition-colors">Adrian Baruela</h1>
+                        <p class="text-sm text-zinc-400">Full Stack Developer</p>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center gap-2">
+                    <a href="index.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Home</a>
+                    <a href="about.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">About</a>
+                    <a href="portfolio.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Portfolio</a>
+                    <a href="gallery.html" class="px-5 py-2.5 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Gallery</a>
+                    <a href="contact.html" class="px-5 py-2.5 text-white font-medium rounded-xl bg-white/5 transition-all">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-3">
+                    <button onclick="openResumeModal()" class="glass px-6 py-3 rounded-xl text-white font-semibold inline-flex items-center gap-2 hover:bg-white/10 transition-all">
+                        <i class="fas fa-eye"></i>
+                        View CV
+                    </button>
+                    <button onclick="downloadResume()" class="btn-primary px-6 py-3 rounded-xl text-white font-semibold inline-flex items-center gap-2">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </button>
+                </div>
+                <button class="lg:hidden text-white p-3 hover:bg-white/5 rounded-xl transition-all" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div class="lg:hidden hidden pb-6" id="mobile-menu">
+                <div class="flex flex-col gap-2 glass rounded-2xl p-4">
+                    <a href="index.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Home</a>
+                    <a href="about.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">About</a>
+                    <a href="portfolio.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Portfolio</a>
+                    <a href="gallery.html" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all">Gallery</a>
+                    <a href="contact.html" class="px-4 py-3 text-white font-medium rounded-xl bg-white/5">Contact</a>
+                    <button onclick="openResumeModal()" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all text-left">
+                        <i class="fas fa-eye mr-2"></i>View CV
+                    </button>
+                    <button onclick="downloadResume()" class="px-4 py-3 text-zinc-400 font-medium rounded-xl hover:bg-white/5 hover:text-white transition-all text-left">
+                        <i class="fas fa-download mr-2"></i>Download CV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="relative pt-40 pb-20 overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+        </div>
+        <div class="container mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center animate-fadeInUp">
+                <span class="inline-block px-5 py-2 glass rounded-full text-sm font-semibold text-pink-500 mb-4">Get In Touch</span>
+                <h1 class="text-6xl md:text-7xl font-bold text-white mb-6">Contact Me</h1>
+                <p class="text-xl text-zinc-400 max-w-2xl mx-auto">Let's discuss your next project and bring your ideas to life</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                            Let's Work <span class="gradient-text">Together</span>
+                        </h2>
+                        <p class="text-lg text-zinc-300 leading-relaxed mb-8">
+                            I'm always excited to take on new projects and collaborate with amazing people. Whether you have a question, a project idea, or just want to say hello, feel free to reach out!
+                        </p>
+                    </div>
+
+                    <!-- Contact Cards -->
+                    <div class="space-y-6">
+                        <div class="glass rounded-2xl p-8 hover-lift border-l-4 border-pink-500">
+                            <div class="flex items-start gap-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Email</h3>
+                                    <p class="text-zinc-400 mb-3">adrianbaruela0@gmail.com</p>
+                                    <a href="mailto:adrianbaruela0@gmail.com" class="text-pink-500 font-semibold hover:text-orange-500 transition-colors inline-flex items-center gap-2">
+                                        Send Email →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass rounded-2xl p-8 hover-lift border-l-4 border-orange-500">
+                            <div class="flex items-start gap-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Phone</h3>
+                                    <p class="text-zinc-400 mb-3">9363083501</p>
+                                    <a href="tel:9363083501" class="text-orange-500 font-semibold hover:text-yellow-500 transition-colors inline-flex items-center gap-2">
+                                        Call Now →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass rounded-2xl p-8 hover-lift border-l-4 border-green-500">
+                            <div class="flex items-start gap-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Location</h3>
+                                    <p class="text-zinc-400 mb-2">Sappaac, Bangued, Abra, Philippines</p>
+                                    <p class="text-sm text-zinc-500">Available for remote work worldwide</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass rounded-2xl p-8 hover-lift border-l-4 border-blue-500">
+                            <div class="flex items-start gap-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-facebook-f text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Facebook</h3>
+                                    <p class="text-zinc-400 mb-3">Connect with me</p>
+                                    <a href="https://web.facebook.com/adrian.baruela.94" target="_blank" class="text-blue-500 font-semibold hover:text-blue-400 transition-colors inline-flex items-center gap-2">
+                                        Visit Profile →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="pt-6">
+                        <h3 class="text-2xl font-bold text-white mb-6">Follow Me</h3>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/adrianbaruela18-star" class="w-14 h-14 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-white hover:bg-pink-500 transition-all hover:scale-110">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="www.linkedin.com/in/adrian-baruela-bb6940394" class="w-14 h-14 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-white hover:bg-pink-500 transition-all hover:scale-110">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://web.facebook.com/adrian.baruela.94" class="w-14 h-14 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-white hover:bg-pink-500 transition-all hover:scale-110">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/adrnbrla?igsh=MXNqYnQ1d21nMDQ4dg==" class="w-14 h-14 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-white hover:bg-pink-500 transition-all hover:scale-110">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass rounded-2xl p-8 lg:p-10">
+                    <h3 class="text-3xl font-bold text-white mb-8">Send Me a Message</h3>
+                    
+                    <form id="contactForm" class="space-y-6" onsubmit="handleSubmit(event)">
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-300 mb-3">Your Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-5 py-4 bg-zinc-900 border border-zinc-800 rounded-xl focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20 transition-all text-white placeholder-zinc-500" placeholder="John Doe">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-300 mb-3">Email Address *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-5 py-4 bg-zinc-900 border border-zinc-800 rounded-xl focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20 transition-all text-white placeholder-zinc-500" placeholder="john@example.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-300 mb-3">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-5 py-4 bg-zinc-900 border border-zinc-800 rounded-xl focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20 transition-all text-white placeholder-zinc-500" placeholder="+123 456 7890">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-300 mb-3">Subject *</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-5 py-4 bg-zinc-900 border border-zinc-800 rounded-xl focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20 transition-all text-white placeholder-zinc-500" placeholder="Project Inquiry">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-300 mb-3">Message *</label>
+                            <textarea id="message" name="message" required rows="6" class="w-full px-5 py-4 bg-zinc-900 border border-zinc-800 rounded-xl focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20 transition-all resize-none text-white placeholder-zinc-500" placeholder="Tell me about your project..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full btn-primary px-8 py-4 rounded-xl text-white font-semibold inline-flex items-center justify-center gap-3 text-lg">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+
+                        <p class="text-sm text-zinc-500 text-center">
+                            * Required fields. I'll get back to you within 24 hours.
+                        </p>
+                    </form>
+
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="successMessage" class="hidden mt-6 p-6 bg-green-500/20 border border-green-500/50 rounded-xl">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-500 text-2xl"></i>
+                            <div>
+                                <h4 class="text-white font-bold mb-1">Message Sent Successfully!</h4>
+                                <p class="text-zinc-300 text-sm">Thank you for reaching out. I'll get back to you within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Find Me Here</h2>
+                <p class="text-lg text-zinc-400">Based in Sappaac, Bangued, Abra - Available Worldwide</p>
+            </div>
+            
+            <div class="glass rounded-2xl overflow-hidden shadow-2xl">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3841.842675!2d120.6377!3d17.6108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x338e452fe07efdf1%3A0xe7b8b93016090c7e!2sGJ6Q%2B677%20Sapaac%20bangued%2C%20Bangued%2C%20Abra!5e0!3m2!1sen!2sph!4v1735123456789!5m2!1sen!2sph"
+                    width="100%" 
+                    height="500" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block px-5 py-2 glass rounded-full text-sm font-semibold text-pink-500 mb-4">Common Questions</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+                <p class="text-lg text-zinc-400">Here are some answers to common questions</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                        <i class="fas fa-question-circle text-pink-500"></i>
+                        What services do you offer?
+                    </h3>
+                    <p class="text-zinc-400 leading-relaxed pl-9">
+                        I specialize in PHP-based information systems, React web applications, and modern HTML/CSS websites. I work with Laravel, React, Tailwind CSS, and MySQL databases.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                        <i class="fas fa-question-circle text-pink-500"></i>
+                        What is your typical project timeline?
+                    </h3>
+                    <p class="text-zinc-400 leading-relaxed pl-9">
+                        Simple websites take 1-2 weeks, while information systems may take 4-8 weeks depending on complexity. I'll provide a detailed timeline after discussing your specific needs.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                        <i class="fas fa-question-circle text-pink-500"></i>
+                        Do you work remotely?
+                    </h3>
+                    <p class="text-zinc-400 leading-relaxed pl-9">
+                        Yes! I'm available for remote work and collaborate with clients worldwide. I use modern communication tools to ensure smooth project management and regular updates.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                        <i class="fas fa-question-circle text-pink-500"></i>
+                        Do you provide ongoing support?
+                    </h3>
+                    <p class="text-zinc-400 leading-relaxed pl-9">
+                        Absolutely! I offer maintenance packages including bug fixes, updates, security patches, and feature enhancements to ensure your system runs smoothly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-orange-500/10"></div>
+        <div class="container mx-auto px-6 lg:px-8 text-center relative z-10">
+            <div class="max-w-4xl mx-auto glass rounded-3xl p-12">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6 text-white">Ready to Start Your Project?</h2>
+                <p class="text-xl text-zinc-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Let's turn your vision into reality. Get in touch today and let's discuss how I can help you achieve your goals.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#contactForm" class="btn-primary px-10 py-4 rounded-xl text-white font-semibold inline-flex items-center gap-3 text-lg">
+                        <i class="fas fa-paper-plane"></i>
+                        Send a Message
+                    </a>
+                    <a href="portfolio.html" class="glass px-10 py-4 rounded-xl text-white font-semibold inline-flex items-center gap-3 hover:bg-white/10 transition-all text-lg">
+                        <i class="fas fa-briefcase"></i>
+                        View My Work
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900/50 pt-20 pb-10 border-t border-zinc-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="profile.jpg" alt="Adrian Baruela" class="w-14 h-14 rounded-full object-cover border-2 border-pink-500/50">
+                        <span class="text-xl font-bold text-white">Adrian Baruela</span>
+                    </div>
+                    <p class="text-zinc-400 leading-relaxed mb-6">Full Stack Developer passionate about creating innovative digital solutions.</p>
+                    <div class="flex gap-3">
+                        <a href="https://github.com/adrianbaruela18-star" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-github"></i></a>
+                        <a href="www.linkedin.com/in/adrian-baruela-bb6940394" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://web.facebook.com/adrian.baruela.94" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/adrnbrla?igsh=MXNqYnQ1d21nMDQ4dg==" class="w-12 h-12 glass hover:bg-pink-500 text-zinc-400 hover:text-white rounded-xl flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="text-white font-bold mb-6 text-lg">Quick Links</h6>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-zinc-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="portfolio.html" class="text-zinc-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="gallery.html" class="text-zinc-400 hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="text-zinc-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="text-white font-bold mb-6 text-lg">Services</h6>
+                    <ul class="space-y-3">
+                        <li class="text-zinc-400">Information Systems</li>
+                        <li class="text-zinc-400">Web Development</li>
+                        <li class="text-zinc-400">React Applications</li>
+                        <li class="text-zinc-400">UI/UX Design</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="text-white font-bold mb-6 text-lg">Contact Info</h6>
+                    <div class="space-y-4">
+                   <p class="flex items-center text-zinc-400 gap-2"><i class="fas fa-envelope text-pink-500"></i><span>adrianbaruela0@gmail.com</span></p>
+                        <p class="flex items-center text-zinc-400 gap-2"><i class="fas fa-phone text-pink-500"></i><span>936 308 3501</span></p>
+                        <p class="flex items-start text-zinc-400 gap-2"><i class="fas fa-map-marker-alt text-pink-500 mt-1"></i><span>Sappaac, Bangued, Abra</span></p>
+                        </div>
+                   </div>     
+            </div>
+            <div class="border-t border-zinc-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-500">
+                <p>© 2025 Adrian Baruela. All Rights Reserved.</p>
+                <p class="mt-2 md:mt-0">JHAYPRO <i class="fas fa-heart text-pink-500 mx-1"></i> WEB SOLUTIONS</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 btn-primary text-white rounded-full shadow-2xl opacity-0 invisible hover:scale-110 transition-all z-50 flex items-center justify-center">
+        <i class="fas fa-chevron-up text-xl"></i>
+    </button>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
+        <div class="relative w-full max-w-5xl max-h-[90vh] glass rounded-2xl overflow-hidden">
+            <div class="flex items-center justify-between p-6 border-b border-zinc-800">
+                <h3 class="text-2xl font-bold text-white">My Resume</h3>
+                <div class="flex items-center gap-3">
+                    <button onclick="downloadResume()" class="btn-primary px-6 py-3 rounded-xl text-white font-semibold inline-flex items-center gap-2">
+                        <i class="fas fa-download"></i>
+                        Download PDF
+                    </button>
+                    <button onclick="closeResumeModal()" class="w-10 h-10 glass rounded-lg flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/10 transition-all">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="overflow-y-auto" style="max-height: calc(90vh - 80px);">
+                <iframe src="artifacts/myresume.pdf" class="w-full h-[600px] border-0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('opacity-0', window.pageYOffset <= 300);
+            backToTop.classList.toggle('invisible', window.pageYOffset <= 300);
+            document.getElementById('navbar').classList.toggle('scrolled', window.pageYOffset > 50);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        
+        // Resume Modal Functions
+        function openResumeModal() {
+            document.getElementById('resumeModal').classList.remove('hidden');
+            document.getElementById('resumeModal').classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeResumeModal() {
+            document.getElementById('resumeModal').classList.add('hidden');
+            document.getElementById('resumeModal').classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Force Download Resume Function
+        function downloadResume() {
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = 'artifacts/myresume.pdf';
+            link.download = 'Adrian_Baruela_Resume.pdf'; // This is the filename that will be saved
+            
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Optional: Show a notification
+            console.log('Downloading resume...');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('resumeModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeResumeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeResumeModal();
+            }
+        });
+        
+        // Contact Form Handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Validate required fields
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields!');
+                return;
+            }
+            
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address!');
+                return;
+            }
+            
+            // Log form data (In production, this would send to a server)
+            console.log('Form submitted:', {
+                name,
+                email,
+                phone,
+                subject,
+                message
+            });
+            
+            // Show success message
+            document.getElementById('successMessage').classList.remove('hidden');
+            
+            // Clear form
+            document.getElementById('contactForm').reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.add('hidden');
+            }, 5000);
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
