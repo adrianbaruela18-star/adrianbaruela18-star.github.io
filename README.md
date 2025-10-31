@@ -1,407 +1,305 @@
-# 🚀 ADRIAN DELA CRUZ - ENHANCED PORTFOLIO 2026
+# 🌟 Adrian Baruela - Portfolio Website
 
-## ✨ MIDTERM EXAMINATION PROJECT - ULTIMATE EDITION
+[![Website](https://img.shields.io/badge/Website-Live-success?style=for-the-badge&logo=github)](https://adrianbaruela18-star.github.io)
+[![GitHub](https://img.shields.io/badge/GitHub-adrianbaruela18--star-181717?style=for-the-badge&logo=github)](https://github.com/adrianbaruela18-star)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/adrian-baruela-bb6940394)
 
-Welcome to your **ENHANCED** portfolio website! This is a cutting-edge, cyberpunk-themed professional portfolio built with modern web technologies and advanced animations.
+> **Full Stack Developer | Information Systems Specialist | Web Development Enthusiast**
 
----
-
-## 🎯 WHAT'S NEW - MAJOR ENHANCEMENTS
-
-### 🎨 **Design Improvements**
-- ✅ **Custom Cursor Effects**: Interactive cursor with follower element
-- ✅ **Advanced Animations**: 30+ custom keyframe animations
-- ✅ **Particle Systems**: Floating particles and neural network effects
-- ✅ **Gradient Animations**: Dynamic color-shifting backgrounds
-- ✅ **Glassmorphism**: Modern blur effects throughout
-- ✅ **3D Transforms**: Hover effects with perspective and rotation
-- ✅ **Enhanced Typography**: Multiple premium fonts (Orbitron, JetBrains Mono, Inter)
-
-### ⚡ **Functionality Enhancements**
-- ✅ **Loading Screen**: Smooth fade-in animation on page load
-- ✅ **Smooth Scrolling**: Buttery-smooth navigation
-- ✅ **Scroll Animations**: Elements fade in as you scroll
-- ✅ **Parallax Effects**: Background moves with scroll
-- ✅ **Counter Animations**: Stats count up when visible
-- ✅ **Skill Bar Animations**: Progress bars fill on scroll
-- ✅ **Keyboard Navigation**: Arrow keys and spacebar support
-- ✅ **Fullscreen Gallery**: F11-style image viewing
-- ✅ **Download Function**: Save images directly
-- ✅ **Auto-play Slideshow**: With pause/play controls
-
-### 📱 **Responsiveness**
-- ✅ **Mobile-First Design**: Perfect on all devices
-- ✅ **Tablet Optimization**: Looks great on iPads
-- ✅ **Desktop Excellence**: Stunning on large screens
-- ✅ **Touch Support**: Works perfectly on touchscreens
-- ✅ **Mobile Menu**: Collapsible navigation for small screens
-
-### 🎪 **Interactivity**
-- ✅ **Hover Animations**: Every element responds to hover
-- ✅ **Ripple Effects**: Click feedback on cards
-- ✅ **Card Tilt**: 3D card effects on mouse move
-- ✅ **Button Shimmer**: Animated glow effects
-- ✅ **Status Indicators**: Live system status displays
-- ✅ **Project Dots**: Interactive project status visualization
-
-### 🌈 **Visual Effects**
-- ✅ **Holographic Overlays**: Sci-fi grid patterns
-- ✅ **Neon Glows**: Cyan, magenta, and green accents
-- ✅ **Animated Borders**: Rotating gradient borders
-- ✅ **Spice Overlays**: Color-shifting layers
-- ✅ **Box Shadows**: Multiple layered shadows
-- ✅ **Text Shadows**: Glowing text effects
+Welcome to my personal portfolio website! This repository contains the source code for my professional portfolio showcasing my projects, skills, and journey in software development.
 
 ---
 
-## 📁 FILE STRUCTURE
+## 🚀 Live Demo
 
-```
-portfolio/
-├── index.html                 # Main homepage (ENHANCED)
-├── baruela_resume.html        # Resume page (ENHANCED)
-├── gallery.html               # Image gallery (ENHANCED)
-├── projects.html              # Projects showcase (ENHANCED)
-├── css/
-│   └── styles.css             # Complete CSS (2500+ lines)
-├── js/
-│   └── scripts.js             # JavaScript functionality (900+ lines)
-└── ACT12_BARUELA/             # Your images and media
-    ├── 1.jpg to 20.jpg        # Gallery images
-    ├── 19.jpg                 # Profile photo
-    └── 21.mp4                 # Background video
-```
+**Visit my portfolio:** [https://adrianbaruela18-star.github.io](https://adrianbaruela18-star.github.io)
 
 ---
 
-## 🚀 FEATURES BY PAGE
+## 📋 Table of Contents
 
-### 🏠 **Home Page (index.html)**
-1. **Hero Section** with animated statistics
-2. **Hologram Modules** showing skills, projects, experience
-3. **Central AI Core** with rotating rings
-4. **Portfolio Grid** with 4 main sections
-5. **Contact Section** with interactive cards
-6. **Smooth Animations** on scroll
-7. **Particle Effects** in background
-
-### 📄 **Resume Page (baruela_resume.html)**
-1. **Professional Header** with animated avatar
-2. **Personal Data Cards** with hover effects
-3. **Education Timeline** with glowing nodes
-4. **Reference Cards** with gradient backgrounds
-5. **Animated Progress Indicators**
-6. **Responsive Layout** for all devices
-
-### 🖼️ **Gallery Page (gallery.html)**
-1. **20-Image Slideshow** with smooth transitions
-2. **Background Video** with overlay effects
-3. **Neural Particles** floating animation
-4. **Control Panel** with 5 buttons:
-   - Pause/Play Video
-   - Pause/Play Slideshow
-   - Fullscreen Mode
-   - Download Current Image
-   - Return Home
-5. **Image Counter** and **Format Indicator**
-6. **Dot Navigation** for quick access
-7. **Keyboard Controls** (Arrow keys, Spacebar)
-
-### 🌐 **Projects Page (projects.html)**
-1. **6 Live Projects** with full details
-2. **Project Statistics** showing metrics
-3. **Live Status Indicators** with pulse animations
-4. **Technology Badges** for each project
-5. **Launch Buttons** to visit projects
-6. **Hover 3D Effects** on project cards
+- [About](#about)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Pages](#pages)
+- [Projects Showcase](#projects-showcase)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contact](#contact)
+- [License](#license)
 
 ---
 
-## 🎨 COLOR SCHEME
+## 👨‍💻 About
 
-### Primary Colors
-- **Cyan**: `#00ffff` - Primary accent
-- **Magenta**: `#ff00ff` - Secondary accent
-- **Green**: `#00ff7f` - Success states
-- **Yellow**: `#ffff00` - Warning states
-- **Orange**: `#ff6b00` - Special accents
+I'm **Adrian Dela Cruz Baruela**, a passionate Full Stack Developer from Abra, Philippines, specializing in:
 
-### Backgrounds
-- **Dark**: `#0a0a0a` - Main background
-- **Dark Alt**: `#1a1a2e` - Secondary background
-- **Blue**: `#16213e` - Tertiary background
-- **Blue Alt**: `#0f3460` - Accent background
+- 💻 **Web Development** (PHP, JavaScript, React)
+- 🗄️ **Database Management** (MySQL, SQL Server)
+- 🎨 **UI/UX Design** (Responsive Design, Modern Interfaces)
+- 📊 **Information Systems** (Student Management, Inventory Systems)
+
+This portfolio website showcases my professional journey, technical skills, completed projects, and achievements in the field of software development.
 
 ---
 
-## ⚙️ CUSTOMIZATION GUIDE
+## ✨ Features
 
-### Change Colors
-Edit the CSS variables in `styles.css`:
-```css
-:root {
-    --primary-cyan: #00ffff;      /* Change to your color */
-    --primary-magenta: #ff00ff;   /* Change to your color */
-    --primary-green: #00ff7f;     /* Change to your color */
-}
-```
-
-### Add More Gallery Images
-1. Add images to `ACT12_BARUELA/` folder
-2. Edit `scripts.js` and add to the `galleryImages` array:
-```javascript
-const galleryImages = [
-    { src: 'ACT12_BARUELA/1.jpg', format: 'JPG' },
-    // Add more here
-    { src: 'ACT12_BARUELA/21.jpg', format: 'JPG' },
-];
-```
-
-### Change Avatar/Profile Photo
-Replace `ACT12_BARUELA/19.jpg` with your photo
-
-### Update Contact Information
-Edit the contact section in `index.html` and `baruela_resume.html`
+- 🎯 **Responsive Design** - Fully optimized for desktop, tablet, and mobile devices
+- 🌙 **Modern UI/UX** - Clean, professional design with smooth animations
+- 📱 **Progressive Web App** - Fast loading and optimized performance
+- 🎨 **Interactive Gallery** - Showcasing projects, certificates, and journey milestones
+- 📧 **Contact Form** - Easy way to get in touch
+- 🎥 **Video Demonstrations** - Live demos of completed projects
+- 🏆 **Certificates & Awards** - Professional achievements and certifications
+- 🔍 **SEO Optimized** - Better visibility on search engines
 
 ---
 
-## 🛠️ TECHNICAL SPECIFICATIONS
+## 🛠️ Technologies Used
 
-### Technologies Used
-- **HTML5**: Semantic markup, accessibility features
-- **CSS3**: Grid, Flexbox, Animations, Gradients
-- **JavaScript ES6+**: Modern syntax, modules
-- **No Dependencies**: Pure vanilla JavaScript!
+### Frontend
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with Tailwind CSS
+- **JavaScript (ES6+)** - Interactive functionality
+- **Tailwind CSS** - Utility-first CSS framework
+- **Font Awesome** - Icon library
 
-### Browser Support
-- ✅ Chrome 90+ (Recommended)
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+### Backend (Projects)
+- **PHP** - Server-side scripting
+- **MySQL** - Database management
+- **React** - Component-based UI development
 
-### Performance
-- ⚡ **Optimized Animations**: Using `transform` and `opacity`
-- ⚡ **Lazy Loading**: Images load as needed
-- ⚡ **Hardware Acceleration**: GPU-powered effects
-- ⚡ **Debounced Events**: Smooth scrolling
-- ⚡ **Minimal Repaints**: Efficient rendering
+### Tools & Platforms
+- **Git & GitHub** - Version control
+- **GitHub Pages** - Hosting
+- **VS Code** - Development environment
+- **Figma** - UI/UX design (prototyping)
 
 ---
 
-## 📝 ANIMATION LIST
+## 📄 Pages
 
-1. `neuralPulse` - Background breathing effect
-2. `holoScan` - Scanning overlay
-3. `fadeIn` / `fadeInUp` - Entry animations
-4. `slideInLeft` / `slideInRight` - Side entries
-5. `titleGlow` - Text glow effect
-6. `titleReveal` - 3D text reveal
-7. `avatarSpin` - Rotating border
-8. `avatarGlow` - Pulsing glow
-9. `avatarFloat` - Floating movement
-10. `statusPulse` - Status indicator
-11. `cardPulse` - Card breathing
-12. `cardFloat` - Card floating
-13. `shimmer` - Gradient movement
-14. `floatUp` - Particle rise
-15. `ripple` - Click effect
+### 1. **Home** (`index.html`)
+- Hero section with introduction
+- Featured skills and technologies
+- Call-to-action buttons
+- Quick project highlights
 
----
+### 2. **About** (`about.html`)
+- Professional biography
+- Technical skills breakdown
+- Education background
+- Work experience timeline
 
-## 🎯 BEST PRACTICES IMPLEMENTED
+### 3. **Portfolio** (`portfolio.html`)
+- Featured projects with descriptions
+- Live demos and source code links
+- Technology stack for each project
+- Project categories (Web Apps, Systems, etc.)
 
-✅ **Accessibility**: ARIA labels, semantic HTML, keyboard navigation  
-✅ **SEO**: Meta tags, descriptive titles, structured data  
-✅ **Performance**: Optimized animations, lazy loading  
-✅ **Responsiveness**: Mobile-first, flexible grids  
-✅ **User Experience**: Smooth transitions, clear feedback  
-✅ **Code Quality**: Clean, commented, maintainable  
-✅ **Cross-Browser**: Tested on multiple browsers  
-✅ **Security**: No inline JavaScript, safe practices  
+### 4. **Gallery** (`gallery.html`)
+- **Photos** - Journey milestones and achievements
+- **Videos** - Project demonstrations and tutorials
+- **Certificates** - Professional certifications and awards
+- Lightbox viewer for full-screen images
 
----
-
-## 🎓 TIPS FOR YOUR PRESENTATION
-
-### What to Highlight:
-1. **Custom Animations** - Show the smooth transitions
-2. **Responsive Design** - Resize the browser window
-3. **Interactive Elements** - Hover over cards
-4. **Gallery Features** - Demo the slideshow controls
-5. **Loading Animations** - Refresh the page
-6. **Mobile View** - Use browser dev tools
-
-### Demo Flow:
-1. Start on **Home Page** → Show hero animation
-2. Scroll Down → Show scroll animations
-3. Click **Resume** → Show timeline
-4. Click **Gallery** → Demo slideshow + controls
-5. Click **Projects** → Show project cards
-6. Return **Home** → Smooth navigation
+### 5. **Contact** (`contact.html`)
+- Contact form
+- Social media links
+- Location information
+- Professional email
 
 ---
 
-## 🌟 GRADING CRITERIA COVERAGE
+## 🎯 Projects Showcase
 
-### Design (30 points)
-✅ Modern, cyberpunk aesthetic  
-✅ Consistent color scheme  
-✅ Professional layout  
-✅ Visual hierarchy  
-✅ Typography excellence  
+### Featured Projects:
 
-### Functionality (30 points)
-✅ All pages work perfectly  
-✅ Navigation is smooth  
-✅ Interactive elements respond  
-✅ Forms (contact info) display  
-✅ No broken links  
+1. **Student Information System**
+   - PHP-based management system
+   - MySQL database integration
+   - Features: Enrollment, Grading, Attendance
 
-### Responsiveness (20 points)
-✅ Works on mobile (320px+)  
-✅ Works on tablet (768px+)  
-✅ Works on desktop (1920px+)  
-✅ Adaptive layouts  
-✅ Touch-friendly  
+2. **Inventory Management System**
+   - Real-time stock tracking
+   - Sales reports and analytics
+   - User role management
 
-### Creativity (20 points)
-✅ Unique cyberpunk theme  
-✅ Custom animations  
-✅ Interactive particles  
-✅ 3D effects  
-✅ Original design  
+3. **Task Management Application**
+   - React-based interface
+   - Drag-and-drop functionality
+   - Real-time updates
+
+4. **Modern Portfolio Website**
+   - Responsive design
+   - Interactive animations
+   - SEO optimized
+
+*View all projects on the [Portfolio Page](https://adrianbaruela18-star.github.io/portfolio.html)*
 
 ---
 
-## 🚀 DEPLOYMENT OPTIONS
+## 💾 Installation
 
-### Option 1: GitHub Pages (FREE)
-1. Create GitHub repository
-2. Upload all files
-3. Enable GitHub Pages in settings
-4. Your site is live!
+To run this project locally:
 
-### Option 2: Netlify (FREE)
-1. Drag and drop folder to netlify.com
-2. Instant deployment
-3. Custom domain support
+### Prerequisites
+- Web browser (Chrome, Firefox, Safari, Edge)
+- Text editor (VS Code recommended)
+- Git installed
 
-### Option 3: Vercel (FREE)
-1. Connect GitHub repo
-2. Auto-deploy on push
-3. Preview deployments
+### Steps
 
----
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/adrianbaruela18-star/adrianbaruela18-star.github.io.git
+   ```
 
-## 📚 ADDITIONAL FEATURES TO MENTION
+2. **Navigate to the project directory**
+   ```bash
+   cd adrianbaruela18-star.github.io
+   ```
 
-### Advanced CSS Techniques:
-- CSS Grid for layouts
-- Flexbox for alignment
-- CSS Variables for theming
-- Clip-path for unique shapes
-- Backdrop-filter for blur effects
-- Mix-blend-mode for overlays
-- Keyframe animations
-- Transform 3D effects
+3. **Open in browser**
+   - Simply open `index.html` in your web browser
+   - Or use a local server:
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   
+   # Using Node.js (http-server)
+   npx http-server
+   ```
 
-### JavaScript Features:
-- Intersection Observer API
-- Event delegation
-- Debouncing & throttling
-- Dynamic DOM manipulation
-- Smooth scrolling
-- Fullscreen API
-- Local storage (ready)
-- Custom cursor tracking
+4. **View the website**
+   - Navigate to `http://localhost:8000` in your browser
 
 ---
 
-## 🎉 FINAL CHECKLIST
+## 🎨 Customization
 
-Before submission, verify:
+### Updating Content
 
-✅ All images load correctly  
-✅ All links work (internal & external)  
-✅ No console errors  
-✅ Mobile responsive  
-✅ Animations smooth  
-✅ Gallery slideshow works  
-✅ Projects open correctly  
-✅ Resume displays properly  
-✅ Contact info is accurate  
-✅ Footer links work  
+1. **Personal Information**
+   - Edit contact details in `contact.html`
+   - Update bio in `about.html`
 
----
+2. **Projects**
+   - Add new projects in `portfolio.html`
+   - Update project descriptions and links
 
-## 💡 PRO TIPS
+3. **Gallery**
+   - Add photos to `artifacts/images/journey/`
+   - Add certificates to `artifacts/images/`
+   - Add videos to `artifacts/videos/`
 
-1. **Test on Real Devices**: Check mobile, tablet, desktop
-2. **Check Different Browsers**: Chrome, Firefox, Safari
-3. **Show Source Code**: Be ready to explain your code
-4. **Know Your Features**: Explain each enhancement
-5. **Practice Your Demo**: Smooth presentation = better grade
-6. **Backup Everything**: Save files in multiple places
+4. **Styling**
+   - Modify Tailwind classes in HTML files
+   - Adjust color scheme in `<style>` sections
 
 ---
 
-## 🏆 WHAT MAKES THIS PORTFOLIO STAND OUT
+## 📱 Usage
 
-1. **Professional Theme**: Cyberpunk 2026 aesthetic
-2. **Smooth Animations**: 30+ custom animations
-3. **Interactive Elements**: Every element responds
-4. **Custom Cursor**: Unique pointer experience
-5. **Particle Effects**: Background animations
-6. **3D Transforms**: Modern hover effects
-7. **Loading Screen**: Professional touch
-8. **Gallery System**: Full-featured slideshow
-9. **No Dependencies**: Pure vanilla code
-10. **Fully Responsive**: Works everywhere
+### Navigation
+- Use the top navigation bar to access different sections
+- Mobile-friendly hamburger menu for smaller screens
+- Smooth scroll animations between sections
 
----
+### Gallery Features
+- **Click photos** to view in full-screen lightbox
+- **Press ESC** to close lightbox
+- **Hover effects** show additional information
 
-## 📞 SUPPORT & QUESTIONS
-
-If you need to customize anything:
-
-1. **Colors**: Edit CSS variables in `styles.css`
-2. **Content**: Edit HTML files directly
-3. **Images**: Replace in `ACT12_BARUELA/` folder
-4. **Animations**: Modify keyframes in `midterm.css`
-5. **Functions**: Update `scripts.js`
+### Contact
+- Fill out the contact form to send inquiries
+- Connect via social media links in footer
+- Direct email: adrianbaruela0@gmail.com
 
 ---
 
-## 🎊 CONCLUSION
+## 📊 Project Statistics
 
-This portfolio represents **cutting-edge web design** for 2026, featuring:
-
-- ⚡ Advanced animations and effects
-- 🎨 Professional cyberpunk design
-- 📱 Perfect mobile responsiveness
-- 🎯 Interactive user experience
-- 🚀 Optimized performance
-- ♿ Full accessibility
-- 🎪 Unique creative elements
-
-**YOU'RE READY TO ACE THIS EXAM!** 🎓🌟
+- **Total Projects:** 6+
+- **Technologies Mastered:** 10+
+- **Certificates Earned:** 6+
+- **Code Contributions:** Active
 
 ---
 
-## 📄 LICENSE
+## 🔗 Links & Resources
 
-This portfolio is created for Adrian Dela Cruz's midterm examination.  
-© 2026 JHAYPRO • Enhanced Edition
+- **GitHub Profile:** [github.com/adrianbaruela18-star](https://github.com/adrianbaruela18-star)
+- **LinkedIn:** [linkedin.com/in/adrian-baruela-bb6940394](https://www.linkedin.com/in/adrian-baruela-bb6940394)
+- **Facebook:** [facebook.com/adrian.baruela.94](https://web.facebook.com/adrian.baruela.94)
+- **Instagram:** [@adrnbrla](https://www.instagram.com/adrnbrla)
+- **Portfolio Website:** [adrianbaruela18-star.github.io](https://adrianbaruela18-star.github.io)
 
 ---
 
-**Good luck with your exam! You've got this! 🚀✨**
+## 📞 Contact
+
+**Adrian Dela Cruz Baruela**
+
+📧 **Email:** adrianbaruela0@gmail.com  
+📱 **Phone:** +63 936 308 3501  
+📍 **Location:** Sappaac, Bangued, Abra, Philippines  
+🌐 **Website:** [adrianbaruela18-star.github.io](https://adrianbaruela18-star.github.io)
 
 ---
 
-*Last Updated: October 2025*  
-*Version: 2026.1.0 ENHANCED EDITION*
+## 🤝 Contributing
+
+While this is a personal portfolio, suggestions and feedback are always welcome!
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/suggestion`)
+3. Commit your changes (`git commit -m 'Add suggestion'`)
+4. Push to the branch (`git push origin feature/suggestion`)
+5. Open a Pull Request
+
 ---
-**heres my link of my page**
-https://adrianbaruela18-star.github.io/
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 🙏 Acknowledgments
+
+- **Design Inspiration:** Modern portfolio trends and best practices
+- **Icons:** Font Awesome
+- **Fonts:** Google Fonts (Inter)
+- **Hosting:** GitHub Pages
+- **Special Thanks:** To all mentors and colleagues who supported my journey
+
+---
+
+## 📈 Future Updates
+
+- [ ] Add blog section
+- [ ] Implement dark/light theme toggle
+- [ ] Add more interactive project demos
+- [ ] Integrate analytics dashboard
+- [ ] Add testimonials section
+- [ ] Implement multi-language support
+
+---
+
+## 🌟 Show Your Support
+
+If you like this portfolio or find it helpful, please give it a ⭐️ on GitHub!
+
+---
+
+<div align="center">
+
+### Made with ❤️ by Adrian Baruela
+
+**© 2025 Adrian Baruela. All Rights Reserved.**
+
+[⬆ Back to Top](#-adrian-baruela---portfolio-website)
+
+</div>
